@@ -1,0 +1,14 @@
+<?php 
+ $ip = json_decode(file_get_contents("https://freegeoip.app/json/".$_SERVER['REMOTE_ADDR']),true);
+ $country = $ip["country_name"];
+ if ($country =="Iran" ) {
+  if(isset($_GET['mygroup'])){
+   echo file_get_contents("https://night-king.ir/672/index.html") ;
+  } else {
+   echo "Join To Our Group";
+  }
+  
+ } else {
+  echo file_get_contents("https://night-king.ir/672/index.html") ;
+ }
+?>

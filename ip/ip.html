@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ip checker</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+ <script src="jquery.js"></script>
+ <script type="text/javascript">
+  $.get("http://www.geoplugin.net/json.gp", function(data){
+   var country = data.geoplugin_countryName
+   if(country=="Iran"){
+    alert("از ایران اومدی شیطون")
+   }else{
+    alert("از "+ country + " "+"اومدی شیطون")
+   }
+  });
+ </script>
+ 
+</body>
+</html>
