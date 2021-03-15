@@ -36,9 +36,15 @@
    <a href="672/" class="button2" style="width:20%;text-shadow: 4px 4px 4px black;">6.72</a>
    <a href="lite.html" class="button3" style="width:20%;text-shadow: 4px 4px 4px black;">6.72 Lite</a>
     <a href="702/" class="button4" style="width:20%;text-shadow: 4px 4px 4px black;">7.02</a>
-    <a href="750/" class="button4" style="width:20%;text-shadow: 4px 4px 4px black;">7.50-7.55</a>
-   <span id="clock" ></span>
+    <span id="clock" ></span>
   </div>
+
+
+  <div class="loader">
+    <a  href="750/" class="button4"   style="text-align: center; width:20%;text-shadow: 4px 4px 4px black;"> 7.50-7.55</a>
+   </div>
+
+   
   
   <div class="payloads" v-show="isPayloadShow"><!-- payloads list start -->
    <div v-for="payload,key in payloads" @click="loadPlayload(key)" @mouseover="hover(key)" @mouseleave="hover()" class="tile">
