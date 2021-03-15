@@ -240,6 +240,11 @@ function stage2() {
     }
   } 
     
+ /*
+The following function "write_paylod" is in charge of decoding Base64 Payload String.
+After decode it chains the JB + Payload/HEN/MIRA 
+The JB base in ChendoChap for 7.00 - 7.02
+*/
   var payload_buffer = chain.syscall(477, new int64(0x26200000, 0x9), 0x300000, 7, 0x41000, -1, 0);
   var payload_writer = array_from_address_m(payload_buffer, 0xC0000*4, 1);
   write_payload(payload_writer);

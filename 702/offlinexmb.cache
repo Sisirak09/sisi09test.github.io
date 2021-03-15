@@ -2,6 +2,7 @@ CACHE MANIFEST
 # v2.5.5 Self-Host 
 
 1.jpg
+8.jpg
 about.html
 app2usb.html
 app2usb.js
@@ -40,18 +41,26 @@ hen213b.html
 hen213b.js
 index.html
 int64.js
+int64m.js
+jb.js
 kclock.html
 kclock.js
 linux1.html
 linux1.js
 linux3.html
 linux3.js
+loader.js
+mira.html
+mira2b.js
+mira3b.html
+nightking.cache
 PS4-GTA-V-NATIVE-CALLER-7.02-1.00.js
 PS4-GTA-V-NATIVE-CALLER-7.02-1.27.js
 PS4-GTA-V-NATIVE-CALLER-7.02-1.32.js
 ps4.js
 ps4debug.html
 ps4debug.js
+ps4m.js
 restore.html
 restore.js
 rop.js
@@ -63,8 +72,14 @@ todex.html
 todex.js
 userland.js
 utils.js
+utilsm.js
 webrte.html
 webrte.js
+.vs\ProjectSettings.json
+.vs\slnx.sqlite
+.vs\VSWorkspaceState.json
+.vs\702 1.6\config\applicationhost.config
+.vs\702 1.6\v16\.suo
 img\0.jpg
 img\1.jpg
 img\2.jpg
@@ -73,11 +88,4 @@ img\4.jpg
 img\5.jpg
 img\6.jpg
 img\7.jpg
-
-NETWORK:
-*
-
-SETTINGS:
-prefer-online
-
-# Date: 2020-01-01T00:00:00Z
+img\8.jpg
