@@ -9,6 +9,7 @@ binloader.html
 ftp.js
 index.html
 mira750.html
+mira751.html
 mira755.html
 nightking755.cache
 payload750.html
@@ -27,6 +28,9 @@ jb750\c-code.js
 mira750\c-code.js
 mira750\mira.js
 mira750\mira2.js
+mira751\c-code.js
+mira751\mira.js
+mira751\mira2.js
 mira755\c-code.js
 mira755\mira.js
 mira755\mira2.js
