@@ -115,7 +115,8 @@ function setupRW() {
 	if(!read64(g_jsview_butterfly.sub(16)).equals(new Int64("0xffff000000001337")))
 		die("[!] Failed to setup addrof/fakeobj primitives");
 	debug_log("[+] Succesfully got addrof/fakeobj");
-	debug_log("[+] PS4 Jailbreak With Sucess!");
+	debug_log("[+] PS4 Exploit With Success!!");
+	
 
 	/* Getting code execution */
 	/* ... */
