@@ -1,5 +1,5 @@
 CACHE MANIFEST 
-# v2.5.5 Self-Host 
+# random: 2dae45e557016609b8378bd1c8d95430
 
 1.jpg
 750.js
@@ -58,8 +58,3 @@ webkit-7.50\external\utils.js
 
 NETWORK:
 *
-
-SETTINGS:
-prefer-online
-
-# Date: 2020-01-01T00:00:00Z

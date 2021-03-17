@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html manifest="/redirect.manifest">
 <html>
+  <style>
+    body{color: white; background-image:url(3.jpg); background-attachment:fixed; background-size:100%; background-repeat:no-repeat;}
+ </style>
 <head>
  <title>NIGHT KING v4.5 5.05/7.55 FW</title>
  <meta charset="UTF-8" />
@@ -35,7 +38,7 @@
    <a href="672/" class="button2" style="width:20%;text-shadow: 4px 4px 4px black;">6.72</a>
    <a href="lite.html" class="button3" style="width:20%;text-shadow: 4px 4px 4px black;">6.72 Lite</a>
    <a href="702/" class="button4" style="width:20%;text-shadow: 4px 4px 4px black;">7.02</a>
-   <br> <br> <br>
+   <br><br><br>
    <div>
    
     <div class="loader" v-if="isLoaderShow">
@@ -95,7 +98,7 @@
  <script src="js/materialize.js"></script>
  <script type="text/javascript">
  if(localStorage.getItem("theme")==null){
-  localStorage.setItem("theme",0)
+  localStorage.setItem("theme","3.jpg")
  }
  if(localStorage.getItem("lang")==null){
   localStorage.setItem("lang","eng")
@@ -118,7 +121,7 @@
     payloads:[
     ],
     themes:[
-	 {url:"img/3.jpg",animated:false,selected:false},
+	 {url:"3.jpg",animated:false,selected:false},
     ],
    },
    methods:{
