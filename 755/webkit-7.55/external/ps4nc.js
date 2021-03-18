@@ -99,6 +99,8 @@ function setupRW() {
 		die("[!] Failed to setup arbitrary R/W primitive");
 
 	debug_log("[+] Succesfully got arbitrary R/W!");
+	debug_log("[+] PS4 Jailbreak With Success!!!");
+	debug_log("[+] Waiting PS4 Payload NetCat Port 9020!!!");
 
 	/* Restore the overidden vtable pointer */
 	write64(guess_htmltextarea_addr, saved_vtable);
