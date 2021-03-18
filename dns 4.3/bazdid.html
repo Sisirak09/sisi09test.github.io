@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style type="text/css">
+ table, th, td,tr {
+ border: 1px solid black;
+ border-collapse: collapse;
+ text-align:center;
+ padding:5px;
+ }
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+ fetch("https://night-king.ir/dns/country.txt")
+ .then(res => res.text())
+ .then(res => {
+  var countries = res.split(",");
+  var uniqueCountries = [... new Set(countries)]
+  var views = [];
+  for(i=0;i<uniqueCountries.length;i++){
+   views[views.length]={"name":uniqueCountries[i],count:0}
+   for(j=0;j<countries.length;j++){
+    if(countries[j]==uniqueCountries[i]){
+     views[i].count++
+    }
+   }
+  }
+  views.sort(function(a, b) {
+  return b.count - a.count
+  })
+  for(z=0;z<views.length;z++){
+   if(views[z].name!==""){
+    document.getElementById("table").innerHTML+="<tr><td>"+views[z].name+"</td><td>"+views[z].count +" ("+((views[z].count/countries.length)*100).toFixed(1)+"%)</td></tr>"
+   }
+  }
+   document.getElementById("table").innerHTML+="<tr><td>Total ("+views.length+" countries)</td><td>"+countries.length+"</td></tr>"
+   const date1 = new Date('9/9/2020');
+   const date2 = new Date();
+   const diffTime = Math.abs(date2 - date1);
+   const diffHours = Math.ceil(diffTime / (1000 * 60 * 60)); 
+   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+   document.getElementById("table").innerHTML+="<tr><td>Average View Per Hour</td><td>"+Math.ceil(countries.length/diffHours)+"</td></tr>"
+   document.getElementById("table").innerHTML+="<tr><td>Average View Per Day</td><td>"+Math.ceil(countries.length/diffDays)+"</td></tr>"
+ })
+</script>
+<div style="text-align:center;font-size:20px;padding:20px;font-weight:900" >Night King Views</div>
+<table style="width:100%" id="table" >
+  <tr>
+    <th>Country</th>
+    <th>Views</th> 
+  </tr>
+</table>
+<center>Counter Start in 00:00 2020/09/09</center>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<html manifest="offlinexmb.cache">
+<head>
+<meta charset="utf-8">
+<title>Night King Lite v4.3</title>
+<link rel="stylesheet prefetch" href="Style-Common.css">
+<script>
+function DLProgress(e){
+	parent.ScrOverlay.style.display="block";
+	Percent=(Math.round(e.loaded / e.total * 100));
+	parent.cacheUPDtxt.innerHTML="Installing Offline Cache: " + Percent + "%";
+	parent.CacheBar.style.width=Percent + '%';
+}
+function DisplayCacheProgress(){
+	setTimeout(function(){parent.cacheUPDtxt.innerHTML="Cache Installed Successfully";},1000);
+	setTimeout(function(){parent.ScrOverlay.style.opacity="0";},2500);
+	setTimeout(function(){parent.ScrOverlay.style.display="none";},3500);}
+	window.applicationCache.addEventListener("progress",DLProgress,false);
+	window.applicationCache.oncached=function(e){DisplayCacheProgress();};
+	window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+	window.applicationCache.onerror=function(e){parent.cacheUPDtxt.innerHTML="Error Installing Cache";
+};
+</script>
+<script>
+    function showdate() {
+  var dt = new Date();
+    Hour= dt.getHours();
+  Minute= dt.getMinutes();
+     Day=dt.getDate();
+   Month=dt.getMonth()+1;
+   Year=dt.getFullYear();
+document.getElementById("date").innerHTML = (Day+"/"+Month+"/"+Year);
+document.getElementById("clock").innerHTML = (Hour+":"+Minute);
+  }
+  
+  setInterval(showdate,0);
+</script>
+<script src="webkit.js"></script>
+</head>
+<body >
+<div style="background-image: url('1.jpg'); height:100%;">
+<div id=ScrOverlay class=cacheUPDbg><pre id=cacheUPDtxt class=cacheUPD></pre>
+<div id=CacheProgress><div id=CacheBar></div></div></div>
+<div id=Loader class=Loader></div>
+<hr><span id="date" ></span><span id="clock" ></span><h1 style='font-size:30px;text-align:center;color:white;'><a class="button" style="color: green;text-shadow: 4px 4px 4px black;font-size:120%; font-weight: bold;">Pass = <span id=passCounter></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Night King v4.3 Lite manual&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  class="button2" style="color: red;text-shadow: 4px 4px 4px black;font-size:120%; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fail = <span id=failCounter></span> </a></h1>
+<hr>
+<a href="http://paypal.me/Karosharifi" id="donate" style='font-size:25px;text-shadow: 4px 4px 4px black;text-align:center;color:#7CFD96;'>Donation</a><a href="https://idpay.ir/night-king" id="donate2" style='font-size:25px;text-shadow: 4px 4px 4px black;text-align:center;color:#7CFD96;'>حمایت مالی</a><h1 id=msgs2 style='font-size:25px;text-align:center;color:white;'>Status</h1>
+<hr>
+<div id="karo" style="display:none">
+<div id="loader"><div id=msgs class="txt1">Loading Exploit ...</div>
+<div class="AniGif"><div id=ldbar class=Ani1></div></div>
+<div class="txt2"><script>document.write("HEN v2.1.3 for FW 6.72");</script></div></div>
+<div id="done" style="display:none"><div class="txt1"><script>document.write("HEN");</script> Loaded ✔ &nbsp;&nbsp;Press Circle button to exit.</div><div class="container"><div class=AniDone></div></div><div class="txt2"><script>document.write("HEN v2.1.3 for FW 6.72");</script></div></div>
+<div id="fail" style="display:none" class="txt1">Exploit failed !<br>Reboot and try again</div>
+</div>
+<div style="text-align:center"  id="MyItems" onclick="ExpWin()">
+<h1 style='font-size:25px;text-align:center;color:#4863A0;text-shadow: 4px 4px 4px black;'>JAILBREAK</h1>
+<button href="index.html#" style='font-size:22px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='HEN 2.1.3 By SiSTRO(Spoofed to 9.99 FW)'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_hen213(); return false"><b>&nbsp;&nbsp;Hen v2.1.3&nbsp;&nbsp; </button>
+<button href="index.html#" style='font-size:22px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='HEN 2.1.3 By SiSTRO & Leeful'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_hen213b(); return false"><b>&nbsp;Hen v2.1.3 b&nbsp; </button>
+<br>
+<h1 style='font-size:20px;text-align:center;text-shadow: 4px 4px 4px black;color:#4863A0'>PAYLOADS</h1>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Loads a bin file sent to the PS4 IP address on port 9021'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_binloader(); return false"> Bin Loader </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='A full access FTP server for the PS4'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_ftp(); return false"> FTP </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Dump your games or apps to a USB drive to be able to create fpkg files'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_dumper(); return false"> Dumper </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Avatar Dumper Injector v2'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_avatar(); return false"> Avatar.Inject </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Move installed games to an external USB drive'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_app2usb(); return false"> App2USB </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Dump a copy of your kernel to your USB drive'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_kerneldump(); return false"> Kernel Dumper </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Disable the auto opening of the last page used in the PS4 WebBrowser'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_historyblock(); return false"> History Blocker </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Creates dummy files in the PS4 update folder'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_updatesdisable(); return false"> Disable Updates </button><br><br>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='FW Version Spoof to 9.99 '"; onmouseout="msgs2.innerHTML='Status'" onclick="load_spoofer(); return false"> Spoofer </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='To install .pkg files without a large enough USB drive'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_fakeusb(); return false"> FakeUSB </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Dump your EAP KEY to a USB drive'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_eap(); return false"> EAP.Key </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Changes the installed games Licence type from FAKE to FREE (AIAzif)'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_rif(); return false"> Rif.Renamer </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='A Linux Loader to run a Linux installation from USB'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_linuxusb(); return false"> Linux.USB </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Linux for baikal version'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_linuxbaikal(); return false"> Linux:Baikal </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Boot Linux from internal HDD'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_linuxin(); return false"> Linux.Internal </button>
+<br><br>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Removes the dummy files in the PS4 update folder'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_updatesenable(); return false"> Enable Updates </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Create a backup of important database files'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_dbBackup(); return false"> DB Backup </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Restore a backup of the database files'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_dbRestore(); return false"> DB Restore </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='unlocks some debug features available on testkit'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_todex(); return false"> ToDex </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='that converts Target ID to 0x81 which is DevKit'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_todev(); return false"> ToDev </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='converts Target ID to 0xA0 which is Arcade or Kratos model'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_tokratos(); return false"> ToKratos </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Save Data Mounter'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_ps4debug(); return false"> PS4debug </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Restore db file for Host Cache from usb'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_cache(); return false"> Restore Cache </button>
+<br><br>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='A large collection of trainers for your PS4 games from Ps4trainer.com'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_webrte(); return false"> WebRTE </button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='GTAV Mods for Base(R1+L1)'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_gtav100(); return false"> GTAV ArabicGuy 1.00</button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='GTAV Mods for 1.27(==> + [])'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_gtava(); return false"> GTAV ArabicGuy 1.27</button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='GTAV Mods for 1.32(==> + [])'"; onmouseout="msgs.innerHTML='Status'" onclick="load_gtava132(); return false"> GTAV ArabicGuy 1.32</button>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='GTAV Mods for 1.32'"; onmouseout="msgs.innerHTML='Status'" onclick="load_gtavL132(); return false"> GTAV Lamance 1.32</button>
+<br><br>
+<button href="index.html#" style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Set the desired temperature that the PS4 fan starts'"; onmouseout="msgs2.innerHTML='Status'" onclick="load_fanthresh(); return false"> Set Fan Threshold </button><select id="tempC"></select><a style='font-size:17px;text-align:center;color:white;'>&#176;C</a><br><a style='font-size:20px;text-align:center;color:white;'> The PS4's default temp is 79&#176;C</a>
+<br>
+<h1 style='text-align:center;'><a style='font-size:20px;text-align:center;color:#FFD700;'>Designer: <a style='font-size:20px;text-align:center;color:white;'>Karo Sharifi , Amirhossein Kianfard.<a style='font-size:20px;text-align:center;color:#FFD700;'> Super Special Thanks To :<a style='font-size:20px;text-align:center;color:white;'>Leeful , AlAzif , SiSTRo. </a><br><a style='font-size:20px;text-align:center;color:#FFD700;'>Main Owner : <a style='font-size:20px;text-align:center;color:white;'>SALT - Find Us In Telegram:&nbsp;<a href="http://t.me/Salt753194" style='font-size:20px;text-align:center;color:red;'>@Salt753194</a><a style='font-size:20px;text-align:center;color:white;'>&nbsp;and &nbsp;<a href="http://t.me/PS4_JAILBREAK_GAMES" style='font-size:20px;text-align:center;color:red;'>Channel Games</a><a style='font-size:20px;text-align:center;color:white;'>&nbsp;and&nbsp;<a href="http://t.me/PS4_JAILBREAK_NEWS" style='font-size:20px;text-align:center;color:red;'>Channel News</a></a></a></h1>
+</div>
+<div id="explWIN" class="exploitWIN" style="display:none"></div>
+<script>
+for(var i=40; i<=79; i++){
+    var select = document.getElementById("tempC");
+    var option = document.createElement("OPTION");
+	select.options.add(option);
+	option.text = i;
+	option.value = i;
+}
+tempC.value=60;
+</script>
+<script>
+if (localStorage.passcount == null) localStorage.passcount=0;
+window.passCounter.innerHTML=localStorage.passcount;
+if (localStorage.failcount == null) localStorage.failcount=0;
+window.failCounter.innerHTML=localStorage.failcount;
+function ExpWin(){MyItems.style.display="none";explWIN.style.display="block";}
+function getPLloader(){var script = document.createElement('script');script.src = "pl_loader.js";document.getElementsByTagName('head')[0].appendChild(script);}
+function ldPLD(){explWIN.innerHTML='<object type="text/html"data="pl_loader.html"style="width:100%;height:100%;"></object>'};
+function ExpWin(){MyItems.style.display="none";explWIN.style.display="block";}
+function ChangeText(text){var display = window.parent.document.getElementById('text-display');display.innerHTML = "";display.innerHTML = text;}
+if (parent.document.getElementById("iframeId").src.indexOf("index.html") !=-1){ChangeText('&nbsp;Night King Lite v4.3<hr>');}
+function load_hen213(){ karo.style.display = 'block';MyItems.style.display='none';
+	  function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
+     function loadScript(){getScript("hen213.js",function(){setTimeout(jailbreak,500);});}loadScript();}
+function load_hen213b(){ karo.style.display = 'block';MyItems.style.display='none';
+	  function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
+     function loadScript(){getScript("hen213b.js",function(){setTimeout(jailbreak,500);});}loadScript();}
+function ldBL(){explWIN.innerHTML='<object type="text/html"data="exp_BinLoader.html"style="width:100%;height:100%;"></object>'};
+function getPLBL(){var script = document.createElement('script');script.src = "exp_BinLoader.js";document.getElementsByTagName('head')[0].appendChild(script);}
+function load_binloader(){plTITLE="Bin Loader"; fullTITLE="Bin Loader v1.0 By Open Orbis for FW 6.72";getPLloader();ldBL();}
+function load_ftp(){plTITLE="FTP Server"; fullTITLE="FTP Server v1.3 By xVortex for FW 6.72"; plSOURCE="pl_FTP.js";getPLloader();ldPLD();}
+function load_dumper(){plTITLE="Game Dumper"; fullTITLE="Game Dumper v1.8 By xVortex for FW 6.72"; plSOURCE="pl_Dumper.js";getPLloader();ldPLD();}
+function load_avatar(){plTITLE="avatar"; fullTITLE="Avatar Dumper injector v2"; plSOURCE="avatar.js";getPLloader();ldPLD();}
+function load_app2usb(){plTITLE="App2USB"; fullTITLE="App2USB v5 By Stooged for FW 6.72"; plSOURCE="pl_app2usb.js";getPLloader();ldPLD();}
+function load_kerneldump(){plTITLE="Kernel Dumper"; fullTITLE="Kernel Dumper v1.0 By Al Azif for FW 6.72"; plSOURCE="pl_kernelDumper.js";getPLloader();ldPLD();}
+function load_historyblock(){plTITLE="History Blocker"; fullTITLE="History Blocker v1.0 By Stooged for FW 6.72"; plSOURCE="pl_historyBlocker.js";getPLloader();ldPLD();}
+function load_updatesdisable(){plTITLE="Disable Updates"; fullTITLE="Disable Updates v1.0 By Al Azif for FW 6.72"; plSOURCE="pl_updatesDisable.js";getPLloader();ldPLD();}
+function load_updatesenable(){plTITLE="Enable Updates"; fullTITLE="Enable Updates v1.0 By Al Azif for FW 6.72"; plSOURCE="pl_updatesEnable.js";getPLloader();ldPLD();}
+function load_dbBackup(){plTITLE="Database Backup"; fullTITLE="Database Backup v1.0 By Al Azif for FW 6.72"; plSOURCE="pl_dbBackup.js";getPLloader();ldPLD();}
+function load_dbRestore(){plTITLE="Database Restore"; fullTITLE="Database Restore v1.0 By Al Azif for FW 6.72"; plSOURCE="pl_dbRestore.js";getPLloader();ldPLD();}
+function load_todex(){plTITLE="ToDex"; fullTITLE="ToDex"; plSOURCE="pl_ToDEX.js";getPLloader();ldPLD();}
+function load_todev(){plTITLE="ToDev"; fullTITLE="ToDev"; plSOURCE="pl_ToDEV.js";getPLloader();ldPLD();}
+function load_tokratos(){plTITLE="ToKratos"; fullTITLE="ToKratos"; plSOURCE="pl_ToKratos.js";getPLloader();ldPLD();}
+function load_ps4debug(){plTITLE="PS4Debug"; fullTITLE="PS4Debug v1.2.1 By GiantPluto for FW 6.72"; plSOURCE="pl_ps4debug.js";getPLloader();ldPLD();}
+function load_webrte(){plTITLE="WebRTE"; fullTITLE="WebRTE v1.0 By PS4 Trainer for FW 6.72"; plSOURCE="pl_WebRTE.js";getPLloader();ldPLD();}
+function load_fakeusb(){plTITLE="Fake USB"; fullTITLE="Fake USB"; plSOURCE="pl_fakeusb.js";getPLloader();ldPLD();}
+function load_eap(){plTITLE="EAP Key Dumper"; fullTITLE="EAP Key Dumper"; plSOURCE="pl.PS4-EAP-KEY-DUMPER.js";getPLloader();ldPLD();}
+function load_linuxusb(){plTITLE="Linux USB"; fullTITLE="Linux USB"; plSOURCE="pl_linux.js";getPLloader();ldPLD();}
+function load_linuxbaikal(){plTITLE="Linux Baikal"; fullTITLE="Linux Baikal"; plSOURCE="linuxbaikal.js";getPLloader();ldPLD();}
+function load_linuxin(){plTITLE="Linux HDD"; fullTITLE="Linux HDD"; plSOURCE="linuxhdd.js";getPLloader();ldPLD();}
+function load_rif(){plTITLE="Rif Renamer"; fullTITLE="Rif Renamer"; plSOURCE="rifrenamer.js";getPLloader();ldPLD();}
+function load_spoofer(){plTITLE="Spoofer"; fullTITLE="Spoofer"; plSOURCE="spoofer.js";getPLloader();ldPLD();}
+function load_cache(){plTITLE="Restore"; fullTITLE="Restore From USB"; plSOURCE="cache.js";getPLloader();ldPLD();}
+function load_gtav100(){plTITLE="GTAV Mods"; fullTITLE="GTAV Mods 1.00"; plSOURCE="gtava100.js";getPLloader();ldPLD();}
+function load_gtava(){plTITLE="GTAV Mods"; fullTITLE="GTAV Mods 1.27"; plSOURCE="gtava127.js";getPLloader();ldPLD();}
+function load_gtava132(){plTITLE="GTAV Mods"; fullTITLE="GTAV Mods 1.32"; plSOURCE="gtava132.js";getPLloader();ldPLD();}
+function load_gtavL132(){plTITLE="GTAV Mods"; fullTITLE="GTAV Mods 1.32"; plSOURCE="Lamance132.js";getPLloader();ldPLD();}
+function load_fanthresh(){plTITLE="Fan Controller"; fullTITLE="Set the desired temperature that the PS4 fan starts"; plSOURCE="pl_fanthresh.js";getPLloader();ldPLD();}
+</script>
+ <script>
+parent.ldbar = ldbar;
+parent.msgs = msgs;
+parent.loader = loader;
+parent.done = done;
+</script>
+</div>
+</body>
+</html>

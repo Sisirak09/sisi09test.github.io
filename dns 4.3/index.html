@@ -1,0 +1,78 @@
+<html manifest="offlinexmb.cache">
+<head>
+<meta charset="utf-8">
+<title>Night King Lite 505 & 672</title>
+<link rel="stylesheet prefetch" href="Style-Common.css">
+<script>
+function DLProgress(e){
+	parent.ScrOverlay.style.display="block";
+	Percent=(Math.round(e.loaded / e.total * 100));
+	parent.cacheUPDtxt.innerHTML="Installing Offline Cache: " + Percent + "%";
+	parent.CacheBar.style.width=Percent + '%';
+}
+function DisplayCacheProgress(){
+	setTimeout(function(){parent.cacheUPDtxt.innerHTML="Cache Installed Successfully";},1000);
+	setTimeout(function(){parent.ScrOverlay.style.opacity="0";},2500);
+	setTimeout(function(){parent.ScrOverlay.style.display="none";},3500);}
+	window.applicationCache.addEventListener("progress",DLProgress,false);
+	window.applicationCache.oncached=function(e){DisplayCacheProgress();};
+	window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+	window.applicationCache.onerror=function(e){parent.cacheUPDtxt.innerHTML="Error Installing Cache";
+};
+</script>
+<script>
+    function showdate() {
+  var dt = new Date();
+    Hour= dt.getHours();
+  Minute= dt.getMinutes();
+     Day=dt.getDate();
+   Month=dt.getMonth()+1;
+   Year=dt.getFullYear();
+document.getElementById("date").innerHTML = (Day+"/"+Month+"/"+Year);
+document.getElementById("clock").innerHTML = (Hour+":"+Minute);
+  }
+  
+  setInterval(showdate,0);
+</script>
+</head>
+<body>
+<div style="background-image: url('1.jpg');">
+    <div id=ScrOverlay class=cacheUPDbg><pre id=cacheUPDtxt class=cacheUPD></pre>
+<div id=CacheProgress><div id=CacheBar></div></div></div>
+<hr><span id="date" ></span><span id="clock" ></span><h1 style='font-size:30px;text-align:center;color:white;'>Night King Lite 505 & 672&nbsp;&nbsp;&nbsp;</h1>
+<hr>
+
+<a href="http://paypal.me/Karosharifi" id="donate" style='font-size:20px;text-align:center;color:#7CFD96;'>Donation</a><a href="https://idpay.ir/night-king" id="donate2" style='font-size:20px;text-align:center;color:#7CFD96;'>حمایت مالی</a><h1 id=msgs2 style='font-size:25px;text-align:center;color:white;'>Status</h1>
+<hr>
+<br><br>
+<h1 style='font-size:27px;text-align:center;color:#4863A0;'>Choose the type FW</h1>
+<br><br>
+<div style="text-align:center">
+<button style='font-size:35px;text-align:center;color:#4863A0' class="pointer" onclick="load_505(); return false"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.05&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button style='font-size:35px;text-align:center;color:#4863A0' class="pointer" onclick="load_672(); return false"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.72&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button>
+<br><br><br><br><br><br><br><br><br>
+<hr>
+<a style='font-size:20px;text-align:center;color:#FFD700;'>Designer: <a style='font-size:20px;text-align:center;color:white;'>Karo Sharifi , Amirhossein Kianfard.<a style='font-size:20px;text-align:center;color:#FFD700;'> Super Special Thanks To :<a style='font-size:20px;text-align:center;color:white;'>Leeful , AlAzif , SiSTRo. </a><br><a style='font-size:20px;text-align:center;color:#FFD700;'>Main Owner : <a style='font-size:20px;text-align:center;color:white;'>SALT - Find Us In Telegram:&nbsp;<a href="http://t.me/Salt753194" style='font-size:20px;text-align:center;color:red;'>@Salt753194</a><a style='font-size:20px;text-align:center;color:white;'>&nbsp;and &nbsp;<a href="http://t.me/PS4_JAILBREAK_GAMES" style='font-size:20px;text-align:center;color:red;'>Channel Games</a><a style='font-size:20px;text-align:center;color:white;'>&nbsp;and&nbsp;<a href="http://t.me/PS4_JAILBREAK_NEWS" style='font-size:20px;text-align:center;color:red;'>Channel News</a></a></a>
+<hr>
+<br><br><br><br><br><br><br>
+</div>
+<script>
+function load_505(){
+  var link = document.createElement('a');
+	  document.body.appendChild(link);
+      link.href = '505lite.html';
+	  link.target='';
+	  link.click();
+}
+function load_672(){
+  var link = document.createElement('a');
+	  document.body.appendChild(link);
+      link.href = '672lite.html';
+	  link.target='';
+	  link.click();
+}
+</script>
+</div>
+</body>
+</html>
