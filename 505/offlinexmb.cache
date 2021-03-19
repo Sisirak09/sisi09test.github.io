@@ -1,4 +1,6 @@
 CACHE MANIFEST 
+# v2.5.5 Self-Host 
+
 1gblinux.html
 2gblinux.html
 3gblinux.html
@@ -77,3 +79,6 @@ vtxhenc0d3mod.html
 webrte2.bin
 xmbcache.html
 xmbinstaller.html
+
+NETWORK:
+*
