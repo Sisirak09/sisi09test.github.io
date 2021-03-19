@@ -1,6 +1,0 @@
-<br><br>
-    <h1 style='font-size:30px;text-align:center;text-shadow: 4px 4px 4px black;color:#4863A0'>7.5X FIRMWARES</h1>
-    <a href="./750/index.html"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Exploit for 7.50 FW'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> 7.50 FW </B></button></a>
-    <a href="./751/index.html"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Exploit for 7.51 FW'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> 7.51 FW </B></button></a>
-    <a href="./755/index.html"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Exploit for 7.55 FW'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> 7.55 FW </B></button></a>
-    <a href="./75XAUTO/index.html"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='MIRA Auto Loader For 7.5x FW'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> MIRA AUTO </B></button></a>
