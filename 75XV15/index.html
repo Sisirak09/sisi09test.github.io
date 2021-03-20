@@ -29,7 +29,7 @@ function DLProgress(e){
 	parent.CacheBar.style.width=Percent + '%';
 }
 function DisplayCacheProgress(){
-	setTimeout(function(){parent.cacheUPDtxt.innerHTML="Cache Installed Successfully.Turn off Internet & Reopen the Browser!!";},1000);}
+	setTimeout(function(){parent.cacheUPDtxt.innerHTML="MIRA Auto FW Detection Cache Installed Successfully.Close and Reopen the Browser!!";},1000);}
 	window.applicationCache.addEventListener("progress",DLProgress,false);
 	window.applicationCache.oncached=function(e){DisplayCacheProgress();};
 	window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
