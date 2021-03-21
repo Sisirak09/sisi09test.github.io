@@ -121,6 +121,9 @@ header div{
 <button style='font-size:22px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs.innerHTML='آخرین نسخه Hen به همراه اضافه شدن قابلیت Save Data Mounting ( پیشنهادی )'"; onmouseout="msgs.innerHTML='Night King Lite 5.05 FW'" onclick="load_hen214(); return false"><b>&nbsp;&nbsp;Hen v2.1.4&nbsp;&nbsp; </button>
 <button style='font-size:22px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs.innerHTML='Last Hen With the ability spoof to 9.99 fw by Leeful'"; onmouseout="msgs.innerHTML='Night King Lite 5.05 FW'" onclick="load_hen214b(); return false"><b>&nbsp;&nbsp;Hen v2.1.4b Spoof&nbsp;&nbsp; </button>
 <button style='font-size:22px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs.innerHTML='فعالسازی Hen و Mira بصورت همزمان'"; onmouseout="msgs.innerHTML='Night King Lite 5.05 FW'" onclick="load_mirahen(); return false"><b>&nbsp;&nbsp;MiraHen18&nbsp;&nbsp; </button>
+<button style='font-size:22px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs.innerHTML='GOLDHEN 1.0 By SISTRo'"; onmouseout="msgs.innerHTML='Night King Lite 5.05 FW'" onclick="load_goldhen(); return false"><b>&nbsp;&nbsp;GoldHen 1.0&nbsp;&nbsp; </button>
+
+  <br>
 <br>
 <h1 style='font-size:25px;text-align:center;color:#4863A0'>PAYLOADS</h1>
 <button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs.innerHTML='لودر فایل Bin از طریق پورت 9020'"; onmouseout="msgs.innerHTML='Night King Lite 5.05 FW'" onclick="load_binloader(); return false"> Bin Loader </button>
@@ -215,6 +218,14 @@ function load_hen214b(){
   var link = document.createElement('a');
         document.body.appendChild(link);
         link.href = 'hen214b.html';
+        link.target = 'exp-loader';
+        link.click();
+}
+
+function load_goldhen(){
+  var link = document.createElement('a');
+        document.body.appendChild(link);
+        link.href = 'goldhen.html';
         link.target = 'exp-loader';
         link.click();
 }
