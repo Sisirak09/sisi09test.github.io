@@ -1,7 +1,10 @@
 CACHE MANIFEST 
 # v2.5.5 Self-Host 
 
+1.jpg
 auto.html
+counter.php
+country.txt
 index.html
 manual.html
 css\icon.css
@@ -45,6 +48,7 @@ p\avatar.bin
 p\cache.bin
 p\EAP.bin
 p\exp_loader.js
+p\goldhen672.bin
 p\gtava100.bin
 p\gtava127.bin
 p\gtava132.bin
@@ -80,3 +84,12 @@ p\pl_updatesEnable.bin
 p\rifrenamer.bin
 p\spoofer.bin
 p\WebRTE.bin
+restore_a\c-code.js
+restore_a\exploit.js
+restore_a\index.html
+restore_a\jailbreak.js
+restore_a\loader.js
+restore_a\payload.js
+
+NETWORK:
+*

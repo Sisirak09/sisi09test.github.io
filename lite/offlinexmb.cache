@@ -4,13 +4,13 @@ CACHE MANIFEST
 1.jpg
 avatar.bin
 cache.bin
+exp_loader.js
+goldhen672.bin
 gtava100.bin
 gtava127.bin
 gtava132.bin
 hen213.bin
 hen213b.bin
-pl_loader.js
-exp_loader.js
 index.html
 jb.js
 Lamance132.bin
@@ -30,6 +30,7 @@ pl_FTP.bin
 pl_historyBlocker.bin
 pl_kernelDumper.bin
 pl_linux.bin
+pl_loader.js
 pl_ps4debug.bin
 pl_ToDEV.bin
 pl_ToDEX.bin
@@ -39,3 +40,12 @@ pl_updatesEnable.bin
 rifrenamer.bin
 Style.css
 WebRTE.bin
+restore\c-code.js
+restore\exploit.js
+restore\index.html
+restore\jailbreak.js
+restore\loader.js
+restore\payload.js
+
+NETWORK:
+*

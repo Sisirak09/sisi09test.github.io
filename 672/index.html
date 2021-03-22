@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html manifest="offlinexmb.cache">
+  <style>
+    body{color: white; background-image:url(1.jpg); background-attachment:fixed; background-size:100%; background-repeat:no-repeat;}
+    input{width:25px;height:25px;background-color: transparent;}
+  </style>
 <html>
 <head>
  <title>NIGHT KING v4.4 - 6.72 FW</title>
@@ -43,7 +47,6 @@ function DisplayCacheProgress(){
     <li class="waves-effect waves-light" v-if="!isPayloadShow" @click="showMain"><a>{{changeText("صفحه اصلی","Main Page","Página de inicio")}}</a></li>
     <li class="waves-effect waves-light" v-if="!isThemesShow" @click="showTheme"><a>{{changeText("تم ها","Themes","Temas")}}</a></li>
     <li class="waves-effect waves-light" v-if="!isAboutUsShow" @click="showAboutUs"><a>{{changeText("درباره ما","About Us","sobre nosotros")}}</a></li>
-	<li class="waves-effect waves-light" v-if="!isDonationShow" @click="showDonation"><a>{{changeText("حمایت از نایت کینگ","Donation","donación")}}</a></li>
    </ul>
   </div>
  </nav><!-- navbar end -->
