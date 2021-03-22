@@ -90,6 +90,12 @@ restore_a\index.html
 restore_a\jailbreak.js
 restore_a\loader.js
 restore_a\payload.js
+restore_m\c-code.js
+restore_m\exploit.js
+restore_m\index.html
+restore_m\jailbreak.js
+restore_m\loader.js
+restore_m\payload.js
 
 NETWORK:
 *
