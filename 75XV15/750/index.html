@@ -1,0 +1,149 @@
+﻿<html manifest="offlinexmb.cache">
+
+  <style>
+body{color: white; background-image:url(1.jpg); background-attachment:fixed; background-size:100%; background-repeat:no-repeat;}
+input{width:25px;height:25px;background-color: transparent;}
+    button {
+                background-color: white;
+                border: 2px solid black;
+                border-radius: 10px;
+                text-align: center;
+    }
+    button:hover {
+                box-shadow: 0 5px 50px 0 white;
+                color: white;
+                border-radius: 10px;
+    }</style>
+<head>
+<meta charset="utf-8">
+<title>Night King v1.6 for 7.50 FW</title>
+<link rel="stylesheet prefetch" href="Style.css">
+    <script>
+        document.cookie = 'kex=1';
+    </script>
+<script>
+function DLProgress(e){
+	parent.ScrOverlay.style.display="block";
+	Percent=(Math.round(e.loaded / e.total * 100));
+	parent.cacheUPDtxt.innerHTML="Installing Offline Cache: " + Percent + "%";
+	parent.CacheBar.style.width=Percent + '%';
+}
+function DisplayCacheProgress(){
+	setTimeout(function(){parent.cacheUPDtxt.innerHTML="Cache Installed Successfully.Turn off Internet & Reopen the Browser!!";},1000);}
+	window.applicationCache.addEventListener("progress",DLProgress,false);
+	window.applicationCache.oncached=function(e){DisplayCacheProgress();};
+	window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+	window.applicationCache.onerror=function(e){parent.cacheUPDtxt.innerHTML="Error Installing Cache";
+};
+</script>
+<script>
+    function showdate() {
+  var dt = new Date();
+    Hour= dt.getHours();
+  Minute= dt.getMinutes();
+     Day=dt.getDate();
+   Month=dt.getMonth()+1;
+   Year=dt.getFullYear();
+if (Minute < 10) { Minute = "0" + Minute; };
+if (Hour < 10) { Hour = "0" + Hour; };
+document.getElementById("date").innerHTML = (Day+"/"+Month+"/"+Year);
+document.getElementById("clock").innerHTML = (Hour+":"+Minute);
+  }
+  
+  setInterval(showdate,0);
+</script>
+</head>
+<body class="bg-darker">
+<div id="container"  >
+<div id=ScrOverlay class=cacheUPDbg><pre id=cacheUPDtxt class=cacheUPD></pre>
+<div id=CacheProgress><div id=CacheBar></div></div></div>
+<hr><span id="date" ></span><span id="clock" ></span><h1 style='font-size:25px;text-align:center;color:white;'>Night King v1.6 for 7.50 FW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+<hr>
+<div class="about" ><a href="about.html" >About Us</a></div>
+<div id="myModal" class="modal">
+  <!-- MODAL CONTENTS -->
+  <div class="modal-content">
+  <span class="close"></span>
+    <div class="modal-body">
+
+    <br><br><br>
+    </div>
+  </div>
+</div>
+<script>
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<div class="theme" ><a href="theme.html" >Themes</a></div>
+<h1 id=msgs3 style='font-size:25px;text-align:center;color:red;'>WARNING: CURRENT EXPLOIT AND WEB KIT ARE NOT STABLE YET</h1>
+
+<h1 id=msgs4 style='font-size:25px;text-align:center;color:white;'>YOU WILL RECEIVE SOME: THERE'S NOT ENOUGHT MEMORY ALERTS OR MIRA WILL CRASH</h1>
+
+<h1 id=msgs5 style='font-size:25px;text-align:center;color:white;'>KEEP TRYING UNTIL YOU GET YOUR PS4 JAILBREAK DONE.</h1>
+<hr>
+<br>
+<h1 id=msgs2 style='font-size:25px;text-align:center;color:white;'>Status</h1>
+<div style="text-align:center" id="MyItems">
+    <br>
+    <a href="7.5XV1.3/payload750.html#f=7.5XV1.3/mira750/mira2.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Old Mira 750 Launcher'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> MIRA OLD </B></button></a>
+    <a href="7.5XV1.3/payload750.html"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Old Bin Loader Netcat on Port 9021'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> NETCAT OLD </B></button></a>
+    <a href="payload750.html#f=mira750/mira2.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='New Mira 750 Launcher'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> MIRA NEW </B></button></a>
+    <a href="payload750.html#f=ps4-hen-vtx-750.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='GOLDHEN by SISTRo'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> GOLDHEN </B></button></a>
+    <a href="payload750.html"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='New Bin Loader Netcat on Port 9021'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> NETCAT NEW </B></button></a>
+    <br>
+    <h1 style='font-size:30px;text-align:center;text-shadow: 4px 4px 4px black;color:#4863A0'>PAYLOADS</h1>
+    <br>
+    <a href="binloader.html"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Loads a bin file sent to the PS4 IP address on port 9020'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> BIN LOADER </B></button></a>
+    <a href="payload750.html#f=payloads/ftp.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='A full access FTP server for the PS4'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> FTP </B></button></a>
+    <a href="payload750.html#f=payloads/dumper.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Dump Games to a USB drive to be able to create fpkg files'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> Dumper Game </B></button></a>
+    <a href="payload750.html#f=payloads/kernel-clock.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Change Kernel Clock'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> Kernel Clock </B></button></a>
+    <a href="payload750.html#f=payloads/app2usb.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Move installed games to an external USB drive'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> App2USB </B></button></a>
+    <a href="payload750.html#f=payloads/todex.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='unlocks some debug features available on testkit'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> ToDex </B></button></a>
+    <br><br>
+    <a href="payload750.html#f=payloads/backup.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Create a backup of important database files ans User Data'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> DB Backup </B></button></a>
+    <a href="payload750.html#f=payloads/restore.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Restore a backup of the database files and User Data'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> DB Restore </B></button></a>
+    <a href="payload750.html#f=payloads/disable-updates.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Creates dummy files in the PS4 update folder'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B>Disable Update</B></button></a>
+    <a href="payload750.html#f=payloads/enable-updates.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Deletes dummy files in the PS4 update folder'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B>Enable Update</B></button></a>
+    <a href="payload750.html#f=payloads/enable-browser.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Enable Browser'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> Enable Browser </B></button></a>
+    <br><br>
+    <a href="payload750.html#f=payloads/disable-aslr.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Disable ASLR'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> Disable ASLR </B></button></a>
+    <a href="payload750.html#f=payloads/fan-threshold.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Fan Control'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> Fan Control </B></button></a>
+    <a href="payload750.html#f=payloads/kernel-dumper.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Dump Kernel'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> Dump Kernel </B></button></a>
+    <a href="payload750.html#f=payloads/module-dumper.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Dump Kernel Modules'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> Dump Modules </B></button></a>
+    <a href="payload750.html#f=payloads/rif-renamer.js"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='Rename Rif Files'" ; onmouseout="msgs2.innerHTML='Status'" type="button"><B> Rename Rif </B></button></a>
+
+    <br><br>
+    <!--<a href="fix.html"><button style='font-size:20px;text-align:center;color:#4863A0' class="pointer" onMouseOver="msgs2.innerHTML='ce-30391-6_fix'"; onmouseout="msgs2.innerHTML='Status'" type="button"><B> CE-30391-6_fix </B></button></a>-->
+    <br><br>
+    <br><a style='font-size:20px;text-align:center;color:#FFD700;'>
+        Main Owner : <a style='font-size:20px;text-align:center;color:white;'>
+            SALT - Find Us In Telegram if you have any kind of issues!:&nbsp;<a href="http://t.me/Salt753194" style='font-size:20px;text-align:center;color:red;'>@Salt753194</a></h1>
+            <br><br>
+            <br><br>
+            <br><a style='font-size:20px;text-align:center;color:#FFD700;'>
+        Credits : <a style='font-size:20px;text-align:center;color:white;'>
+            KameleonRE for porting to 7.50 FW <a href="https://twitter.com/KameleonRe" style='font-size:20px;text-align:center;color:red;'>KameleonRE</a></h1> @Sleirgoevy for Webkit and Kex, @ChendoChap for Patch fixes, @Al-Azif for Patch Fixes, @LightningMods for Mira 7.50 and 7.51&nbsp;
+            <br><br>
+            <br><br>
+
+            <script type="text/javascript">
+              if (localStorage.getItem("theme") == null) {
+                    localStorage.setItem("theme", "1.jpg")
+                }
+                document.getElementById("container").style.background = "url('img/" + localStorage.getItem("theme") + "')"
+                document.getElementById("container").style.backgroundSize = "cover"
+            </script>
+</div>
+    </body>
+    </html>
