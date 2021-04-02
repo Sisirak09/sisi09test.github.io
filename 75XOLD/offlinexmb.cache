@@ -28,14 +28,10 @@ kernel-clock.js
 kernel-dumper.js
 lamance132.js
 linux.js
-loader-750.js
-loader-751.js
-loader-755.js
-mira-750.js
-mira-751.js
-mira-755.js
+loader750.js
+loader751.js
+loader755.js
 mira.html
-mira.js
 mira750.js
 mira751.js
 mira755.js
@@ -44,7 +40,6 @@ nativecaller100.js
 nativecaller127.js
 nativecaller132.js
 netcat.js
-payload.html
 payload75X.html
 ps4.js
 ps4debug755.js
