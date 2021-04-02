@@ -1,22 +1,20 @@
 <html manifest="offlineCache702.manifest">
 	<style>
 		.button {
-		  background-color: white;
-          border: 2px solid black;
-          border-radius: 10px;
-          text-align: center;
+		  background-color: black;  
+		  border-radius: 5px;
+		  color: white;
 		  padding: .5em;
 		  text-decoration: none;
 		  height:100%;
 		  display:inline-table;
-		  
+		  font-family: system-ui;
 		}
 
 		.button:focus,
 		.button:hover {
-			box-shadow: 0 5px 50px 0 white;
-            color: black;
-            border-radius: 10px;
+		  background-color: #007bff;
+		  color: White;
 		}
 
 		.titlehead {
@@ -28,23 +26,23 @@
 		  text-align: center;
 		  margin-top: -10px;
 		  margin-bottom: -10px;
-		  
+		  font-family: system-ui;
 		}
 
 		.titlehead:focus,
 		.titlehead:hover {
-		  background-color: darkgrey;
-		  color: yellow;
+		  background-color: navy;
+		  color:yellow;
 		}
 
 		.bg {
 		  /* The image used */
-		  
-		  background-image:url(1.jpg); 
-		  background-attachment:fixed; 
-		  background-size:100%; 
-		  background-repeat:no-repeat;}
-		  
+		  background-image: url("1.jpg");
+		  font-family: system-ui;
+		  /* Center and scale the image nicely */
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
 		}
 
 		#myProgress {
@@ -72,7 +70,7 @@
 		}
 	</style>
 	<head>
-		<title>Night King V1.0 For 7.02FW (DarkmodderVC Style)</title>
+		<title>PS4 Jailbreak 7.02</title>
 		<script>
 			window.applicationCache.ondownloading=function(){document.getElementById("progress").innerHTML="Page Caching Started!!";localStorage.is702Cached=false;};
 			window.applicationCache.onprogress=function(a){document.getElementById("myBar").style.width=(Math.round(100*(a.loaded/a.total)))+"%";document.getElementById("myBar").innerHTML=(Math.round(100*(a.loaded/a.total)))+"%";};
