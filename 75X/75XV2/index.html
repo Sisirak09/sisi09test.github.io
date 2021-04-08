@@ -16,9 +16,19 @@
             color: white;
             border-radius: 10px;
 		}
+		.title {
+        font-size:40px;
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-weight:bolder;
+        margin-bottom:10px;
+              }
+       .yellow {
+        color:yellow;}
 
 		.titlehead {
-		  background-color: black;  
+		 background-color: black;  
 		  border-radius: 5px;
 		  color: yellow;
 		  padding: .5em;
@@ -150,14 +160,15 @@
         font-weight:bold;
         font-size:28px;
         color: white;
-}
-        .pass {
-        float:left;
-        margin-left:1.25%;
-        font-weight:bold;
-        margin-top: 11px;
-        font-size:28px;
-        color: white;}
+         }
+       .pass {
+       float:left;
+       margin-left:1.25%;
+       font-weight:bold;
+       margin-top: 11px;
+       font-size:28px;
+       color: white;
+       }
 
 	</style>
 	<head>
@@ -206,11 +217,11 @@
 		}
 		
 		function done(){
+            document.getElementById("myProgress").remove();
 			if (localStorage.passcount == null) localStorage.passcount=0;
             window.passCounter.innerHTML=localStorage.passcount;
             if (localStorage.failcount == null) localStorage.failcount=0;
             window.failCounter.innerHTML=localStorage.failcount;
-			document.getElementById("myProgress").remove();
 			if(document.getElementById("progress").innerHTML.includes("Failed")){
 				document.getElementById('load').innerHTML='<tr style="color:white;">'+
 					'<td id="aexp" colspan="2" align="right" style="width: 12%;font-family: system-ui;font-size: 20px;">Autoload Exploit &nbsp;</td>'+
@@ -319,10 +330,8 @@
 		<script src="./webkit/utils.js"></script>
 		<script src="./webkit/int64.js"></script>
 		<script src="./webkit/ps4.js"></script>
-		<a class="pass" style="color: green;text-shadow: 4px 4px 4px black;font-size:30px; font-weight: bold;">Pass = <span id=passCounter></span></a><a  class="fail" style="color: red;text-shadow: 4px 4px 4px black;font-size:30px; font-weight: bold;">Fail = <span id=failCounter></span> </a>
-		<h1 id="progress" class="titlehead">Loading.. Please Wait !!</h1><br>
-        
-		<button style="opacity:0" id="input1" onfocus="handle2()"></button>
+		<a class="pass" style="color: green;text-shadow: 4px 4px 4px black;font-size:30px; font-weight: bold;">Pass = <span id=passCounter></span></a><a  class="fail" style="color: red;text-shadow: 4px 4px 4px black;font-size:30px; font-weight: bold;">Fail = <span id=failCounter></span> </a><h1 id="progress" class="titlehead">Loading.. Please Wait !!</h1><br>
+        <button style="opacity:0" id="input1" onfocus="handle2()"></button>
 		<button style="opacity:0" id="input2"></button>
 		<button style="opacity:0" id="input3" onfocus="handle2()"></button>
 		<select style="opacity:0" id="select1">
