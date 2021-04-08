@@ -24,7 +24,7 @@ Enable_Browser.html
 Enable_Browser.js
 Enable_Updates.html
 Enable_Updates.js
-Exit IDU.html
+Exit_IDU.html
 Exit_IDU.js
 Fan_Threshold.html
 Fan_Threshold.js
@@ -85,7 +85,6 @@ WebRTE.js
 common\blob.js
 common\netcat.js
 jb\jb.js
-jb\ps4-hen-vtx-755.js
 mira\mira.js
 mira\mira2.js
 webkit\int64.js
