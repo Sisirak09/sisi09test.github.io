@@ -24,7 +24,7 @@ Enable_Browser.html
 Enable_Browser.js
 Enable_Updates.html
 Enable_Updates.js
-Exit IDU.html
+Exit_IDU.html
 Exit_IDU.js
 Fan_Threshold.html
 Fan_Threshold.js
@@ -90,3 +90,6 @@ mira\mira2.js
 webkit\int64.js
 webkit\ps4.js
 webkit\utils.js
+
+NETWORK:
+*
