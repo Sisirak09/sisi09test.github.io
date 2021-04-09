@@ -5,14 +5,16 @@ if (main_ret == 179 || main_ret == 0){
 var userAgent = navigator.userAgent;
 if (userAgent.indexOf("PlayStation 4 6.72") != -1) {
 localStorage.passcount = ++localStorage.passcount;window.passCounter.innerHTML=localStorage.passcount;
-msgs2.innerHTML="Exploit Loaded ✔ Run HEN or Mira";
+txt1.innerHTML="Exploit Loaded ✔ Loading Payload...";
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
 	}
 	else{
-msgs2.innerHTML="Status";
+txt1.innerHTML="Exploit Loaded ✔ Loading Payload...";
+var script = document.createElement('script');script.src = "exp_loader.js";document.getElementsByTagName('head')[0].appendChild(script);
 	}
 	}
 else{
 localStorage.failcount = ++localStorage.failcount;window.failCounter.innerHTML=localStorage.failcount;
-msgs2.innerHTML="Jailbreak failed! - Reboot your PS4 and try again";
+txt1.innerHTML="Jailbreak failed! - Reboot your PS4 and try again";
 }
 }
