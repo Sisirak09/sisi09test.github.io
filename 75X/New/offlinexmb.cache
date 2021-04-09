@@ -17,7 +17,6 @@ Backup.html
 backup.js
 Binloader.html
 blob.js
-cache.manifest
 DisableUpdates.html
 disableupdates.js
 EnableUpdates.html
@@ -26,7 +25,6 @@ Enable_Browser.html
 Enable_Browser.js
 Fan.html
 fan.js
-favicon.ico
 Ftp.html
 ftp.js
 goldhen-750.js
@@ -43,10 +41,10 @@ Kernel_Dumper.html
 Kernel_Dumper.js
 Lamance132.html
 lamance132.js
-Linux.html
-linux.js
 LinuxLoader-1GB.js
 LinuxLoader-3GB.js
+Linux_1GB.html
+Linux_3GB.html
 loader-750.js
 loader-751.js
 loader-755.js
@@ -72,8 +70,6 @@ Restore.html
 Restore.js
 RiFrenamer.html
 rifrenamer.js
-Spoof.html
-spoof.js
 Style.css
 Todex.html
 todex.js
@@ -82,6 +78,3 @@ webrte.js
 webkit\int64.js
 webkit\ps4.js
 webkit\utils.js
-
-NETWORK:
-*
