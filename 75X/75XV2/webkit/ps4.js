@@ -143,6 +143,13 @@ function toggle_payload(pld){
 		}else{
 			preloadScripts(['payloads/preloader'+fw+'.js', 'payloads/mira'+fw+'.js', 'payloads/loader.js']);	
 		}
+	}else if(pld == "goldhen75X"){
+		document.getElementById("progress").innerHTML="Loading GoldHen.. Please wait..";
+		if(fw=="755"){
+			preloadScripts(['payloads/preloader.js', 'payloads/goldhen'+fw+'.js', 'payloads/loader.js']);
+		}else{
+			preloadScripts(['payloads/preloader'+fw+'.js', 'payloads/goldhen'+fw+'.js', 'payloads/loader.js']);	
+		}
 	}else if(pld == "mira2b"){
 		document.getElementById("progress").innerHTML="Loading MIRA + SPOOF.. Please wait..";
 		preloadScripts(['payloads/preloader.js', 'payloads/mira2b.js', 'payloads/loader.js']);
@@ -197,9 +204,6 @@ function toggle_payload(pld){
 	}else if(pld == "ps4debug"){
 		document.getElementById("progress").innerHTML="Loading Payload.. Please wait..";
 		preloadScripts(['payloads/preloader.js', 'payloads/ps4debug.js', 'payloads/loader.js']);
-	}else if(pld == "goldhen"){
-		document.getElementById("progress").innerHTML="Loading Payload.. Please wait..";
-		preloadScripts(['payloads/preloader.js', 'payloads/goldhen.js', 'payloads/loader.js']);
 	}else if(pld == "webrte"){
 		document.getElementById("progress").innerHTML="Loading Payload.. Please wait..";
 		preloadScripts(['payloads/preloader.js', 'payloads/webrte.js', 'payloads/loader.js']);

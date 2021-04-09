@@ -16,7 +16,9 @@ payloads\enableupdates.js
 payloads\exitidu.js
 payloads\fancontrol.js
 payloads\ftp.js
-payloads\goldhen.js
+payloads\goldhen750.js
+payloads\goldhen751.js
+payloads\goldhen755.js
 payloads\historyblocker.js
 payloads\kernelclock.js
 payloads\kerneldumper.js
