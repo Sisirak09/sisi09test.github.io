@@ -1,11 +1,26 @@
-<html>
-  <style>
-    body{color: white; background-color: black; background-attachment:fixed; background-size:100%; background-repeat:no-repeat;}
-  </style>
-<head>
+<html><head>
 <title>App Dumper (7.50-7.55)</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+    body{color: white; background-image:url(1.jpg); background-attachment:fixed; background-size:100%; background-repeat:no-repeat;}
+
+    input{width:25px;height:25px;background-color: transparent;}
+        button {
+                    background-color: white;
+                    border: 2px solid black;
+                    border-radius: 10px;
+                    text-align: center;
+        }
+        button:hover {
+                    box-shadow: 0 5px 50px 0 white;
+                    color: white;
+                    border-radius: 10px;
+        }</style>
 </head>
 <body onload="go()">
+<script>
+    if(document.cookie.indexOf('kex=0') >= 0)
+        window.location.href ='index.html';
+</script>
 <script>
 function print(){}
 
@@ -32,7 +47,7 @@ function done() {
 }
 
 window.midExploit = function() {
-  var scripts = ['./blob.js', './jb.js', './appdumper.js', './netcat.js'];
+  var scripts = ['./blob.js', './jb.js', './mira.js', './appdumper.js', './netcat.js'];
 
   if (fwFromUA != "750" && fwFromUA != "751" && fwFromUA != "755") {
     die('Unsupported Firmware!');
@@ -41,16 +56,19 @@ window.midExploit = function() {
   preloadScripts(scripts, go);
 }
 
-window.postExploit = function() {
-  setTimeout(function() {
-    eval.call(window, scriptCode);
-    done();
-  }, 100);
+window.postExploit = function()
+{
+    document.cookie = 'kex=0';
+    setTimeout(function()
+    {
+        eval.call(window, scriptCode);
+        done();
+    }, 100);
 };
 </script>
-<script src="./utils.js"></script>
-<script src="./int64.js"></script>
-<script src="./ps4.js"></script>
+<script src="webkit/utils.js"></script>
+<script src="webkit/int64.js"></script>
+<script src="webkit/ps4.js"></script>
 <button id="input1" onfocus="handle2()"></button>
 <button id="input2"></button>
 <button id="input3" onfocus="handle2()"></button>
