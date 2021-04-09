@@ -1,5 +1,5 @@
 CACHE MANIFEST 
-# ghfghghghghghgtt55555
+# v2.5.5 Self-Host 
 
 1.jpg
 about.html
@@ -7,10 +7,17 @@ app2usb.html
 app2usb.js
 appdumper.html
 appdumper.js
+arabicguy100.html
+arabicguy100.js
+arabicguy127.html
+arabicguy127.js
+arabicguy132.html
+arabicguy132.js
 Backup.html
 backup.js
 Binloader.html
 blob.js
+cache.manifest
 DisableUpdates.html
 disableupdates.js
 EnableUpdates.html
@@ -34,6 +41,8 @@ KernelClock.html
 kernelclock.js
 Kernel_Dumper.html
 Kernel_Dumper.js
+Lamance132.html
+lamance132.js
 Linux.html
 linux.js
 LinuxLoader-1GB.js
@@ -48,6 +57,12 @@ Mira.html
 mira.js
 Module_Dumper.html
 Module_Dumper.js
+NatIvecaller100.html
+natIvecaller100.js
+Nativecaller127.html
+nativecaller127.js
+Nativecaller132.html
+nativecaller132.js
 Netcat.html
 netcat.js
 Ps4Debug.html
@@ -57,6 +72,8 @@ Restore.html
 Restore.js
 RiFrenamer.html
 rifrenamer.js
+Spoof.html
+spoof.js
 Style.css
 Todex.html
 todex.js
