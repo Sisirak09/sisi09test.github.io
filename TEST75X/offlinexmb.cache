@@ -1,8 +1,6 @@
 CACHE MANIFEST 
-# v2.5.5 Self-Host v3
+# v2.5.5 Self-Host-NK
 
-1.jpg
-75xcache.manifest
 about.html
 app2usb.js
 backup.js
@@ -41,3 +39,6 @@ mira\mira751.js
 webkit-7.50\external\int64.js
 webkit-7.50\external\ps4.js
 webkit-7.50\external\utils.js
+
+NETWORK:
+*
