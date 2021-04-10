@@ -1,9 +1,9 @@
 CACHE MANIFEST 
-#V1.8
+# v2.5.5 Self-Host v3
 
 1.jpg
+75xcache.manifest
 about.html
-readme.html
 app2usb.js
 backup.js
 blob.js
@@ -25,6 +25,7 @@ module-dumper.js
 netcat.js
 payload.html
 ps4debug755.js
+readme.html
 restore.js
 rif-renamer.js
 Style.css
