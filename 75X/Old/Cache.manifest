@@ -1,7 +1,9 @@
 CACHE MANIFEST 
-# vghgjkhhigfdddss6755544tgz1 
+# vghgjkhhigfdddss6755544tgz 
 
 1.jpg
+1gb.js
+3gb.js
 about.html
 app2usb.js
 backup.js
@@ -13,6 +15,7 @@ enable-browser.js
 enable-updates.js
 fan-threshold.js
 favicon.ico
+frontend.js
 ftp.js
 idu.js
 index.html
@@ -23,12 +26,14 @@ mira755.js
 module-dumper.js
 netcat.js
 payload.html
+payload.js
 ps4debug755.js
 readme.html
 restore.js
 rif-renamer.js
 Style.css
 todex.js
+webactivator.html
 webrte755.js
 GoldHen75x\blob.js
 GoldHen75x\goldhen-750.js
