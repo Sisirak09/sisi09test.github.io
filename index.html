@@ -19,16 +19,10 @@
  
  <nav class="transparent" ><!-- navbar start -->
   <div class="nav-wrapper">
-   <a href="javascript:void(0)" class="brand-logo left" style="text-shadow: 4px 4px 4px black;">NIGHT KING v4.4 5.05/7.55 FW</a>
+   <a href="javascript:void(0)" class="brand-logo center" style="text-align: center;text-shadow: 4px 4px 4px black;">NIGHT KING v4.6 5.05/7.5X FW</a>
    <ul id="nav-mobile" class="right"><!-- navbar links -->
    
-    <li class="waves-effect waves-light" v-if="lang!=='fa'" @click="changeLang('fa')"><a>فارسی</a></li>
-    <li class="waves-effect waves-light" v-if="lang!=='eng'" @click="changeLang('eng')"><a>English</a></li>
-    <li class="waves-effect waves-light" v-if="lang!=='esp'" @click="changeLang('esp')"></li>
     <li class="waves-effect waves-light" v-if="!isPayloadShow" @click="showMain"><a>{{changeText("صفحه اصلی","Main Page","Página de inicio")}}</a></li>
-    <li class="waves-effect waves-light" v-if="!isThemesShow" @click="showTheme"><a>{{changeText("تم ها","Themes","Temas")}}</a></li>
-    <li class="waves-effect waves-light" v-if="!isAboutUsShow" @click="showAboutUs"><a>{{changeText("درباره ما","About Us","sobre nosotros")}}</a></li>
-	<li class="waves-effect waves-light" v-if="!isDonationShow" @click="showDonation"><a>{{changeText("حمایت از نایت کینگ","Donation","donación")}}</a></li>
    </ul>
   </div>
  </nav><!-- navbar end -->
@@ -36,15 +30,16 @@
   <div class="loader" v-if="isLoaderShow">
   <span id="date" ></span>
   <a href="505/index.html" class="button" style="width:20%;text-shadow: 4px 4px 4px black;">5.05 Lite</a>
-   <a href="672/index.html" class="button2" style="width:20%;text-shadow: 4px 4px 4px black;">6.72</a>
-   <a href="lite.html" class="button3" style="width:20%;text-shadow: 4px 4px 4px black;">6.72 Lite</a>
-   <a href="702/index.html" class="button4" style="width:20%;text-shadow: 4px 4px 4px black;">7.02</a>
+   <a href="672/index.html" class="button" style="width:20%;text-shadow: 4px 4px 4px black;">6.72</a>
+   <a href="lite.html" class="button" style="width:20%;text-shadow: 4px 4px 4px black;">6.72 Lite</a>
+   <a href="702/index.html" class="button" style="width:20%;text-shadow: 4px 4px 4px black;">7.02</a>
    <span id="clock" ></span>
    <br><br><br>
    <div>
    
     <div class="loader" v-if="isLoaderShow">
-    <a href="./75X/index.html" class="button4" style="width:20%;text-shadow: 4px 4px 4px black;">7.5X FW</a>
+    <a href="./75X/index.html" class="button" style="width:20%;text-shadow: 4px 4px 4px black;">7.5XV1 FW</a>
+    <a href="./75XV2/index.html" class="button" style="width:20%;text-shadow: 4px 4px 4px black;">7.5XV2 FW</a>
    </div>
 
    
@@ -59,39 +54,7 @@
    <span id="detail" ></span>
   </div>
   
-  <div class="theme" v-show="isThemesShow"><!-- themes start -->
-    
-    <div class="card" v-for="theme,key in themes" @click="changeTheme(key)">
-     <div class="card-image">
-      <img :src="'img/'+theme.url">
-     </div>
-     <div class="card-action waves-effect waves-light" style="width:100%" >
-      <div class="center" :class="{ 'green-text': theme.selected, 'white-text': !theme.selected}">{{theme.selected ? changeText("انتخاب شده","Selected","Selectionne") : changeText("انتخاب","Select","Seleccione") }}</div>
-     </div>
-    </div>
-
-  </div><!-- themes end -->
-  
-  <div class="Donation"  v-show="isDonationShow" :dir="changeText('rtl','ltr','ltr')" ><!-- Donation start -->
-    <h4><b>{{changeText("حمایت از نایت کینگ","Donation","Donation")}}</b></h4>
-    <p>{{changeText("جهت حمایت از نایت کینگ می توانید از طریق لینک زیر اقدام نمایید","To support us, follow the link below","Para apoyarnos, siga el enlace a continuacion")}} :</p>
-      <p style="color:red;"> 💳 <a href="https://idpay.ir/night-king" target="_blank"> ID-Pay (Iran) Night-King </a> 💳 </p>
-	  <p style="color:red;"> 💳 <a > BTC Wallet [ Night King ] :  1Hp8HtvdCcfyJW366kbamA89LvH3moiHB1 </a> 💳 </p>
-   </div><!-- Donation end -->
-
-  
-   <div class="aboutUs"  v-show="isAboutUsShow" :dir="changeText('rtl','ltr')" ><!-- about us start -->
-    <h4><b>{{changeText("درباره ما","About Us","")}}</b></h4>
-    <p>{{changeText("نایت کینگ نسخه 4.4 - نسخه خصوصی برای فریمور 6.72","NIGHT KING v4.4 - Private Version For 6.72 FW","")}}</p>
-    <p>{{changeText("ما هیچ گروه یا کانال عمومی در تلگرام نداریم !!","We Don't Have Any Public Telegram Group Or Channel !!","")}}</p>
-    <p>{{changeText("✔تشکر فوق العاده ویژه از : الازیف -  لیفول - سیسترو","✔Super Special Thanks To : Alazif - Leeful  - SiSTRo","")}}</p>
-    <p>{{changeText("✔مالک اصلی : SALT - با ما از طریق تلگرام در ارتباط باشید 📞 Salt753194@ 📞","✔Main Owner : SALT - Find Us In Telegram 📞 @Salt753194 📞 ","")}}</p>
-    <p>{{changeText("✔طراح ارشد : امیرحسین کیان فرد","✔Senior Designer : Amirhossein Kianfard","")}},</p>
-    
-   </div><!-- about us end -->
-   
-   
-  </div><!-- app end -->
+</div><!-- app end -->
   
   
   <!-- js section  -->
@@ -111,8 +74,6 @@
    data: {
     isLoaderShow:true,
     isPayloadShow:true,
-    isThemesShow:false,
-	isDonationShow:false,
     isAboutUsShow:false,
     isDetailShow:false,
     isAnimate1Show:false,
@@ -120,9 +81,7 @@
     selectedTheme:localStorage.getItem("theme"),
     payloads:[
     ],
-    themes:[
-	 {url:"3.jpg",animated:false,selected:false},
-    ],
+ 
    },
    methods:{
     loadPlayload: function(key){
@@ -130,47 +89,18 @@
     },
     showMain:function(){
      this.isPayloadShow = true
-     this.isThemesShow = false
-     this.isAboutUsShow = false
      this.isLoaderShow = true
-	 this.isDonationShow = false
     },
     showTheme:function(){
      this.isLoaderShow = false
-     this.isAboutUsShow = false
-     this.isThemesShow = true
      this.isPayloadShow = false
-	 this.isDonationShow = false
     },
     showAboutUs:function(){
      this.isPayloadShow=false
-     this.isAboutUsShow = true
      this.isLoaderShow = false
-     this.isThemesShow = false
-	 this.isDonationShow = false
     },
-    showDonation:function(){
-     this.isPayloadShow=false
-     this.isAboutUsShow = false
-     this.isLoaderShow = false
-     this.isThemesShow = false
-	 this.isDonationShow = true
-    },
-    changeTheme:function(key){
-     this.themes[this.selectedTheme].selected=false
-     localStorage.setItem("theme",(key))
-     this.selectedTheme=localStorage.getItem("theme")
-     this.themes[this.selectedTheme].selected=true
-     if(this.themes[this.selectedTheme].animated){
-      this.isAnimate1Show=true
-     }else{
-      this.isAnimate1Show=false
-      document.getElementById("body").style.background="url(img/"+this.themes[localStorage.getItem("theme")].url+")";
-      document.getElementById("body").style.backgroundRepeat="no-repeat";
-      document.getElementById("body").style.backgroundSize="100%";
-     }
-    },
-    changeLang:function(lang){
+
+     changeLang:function(lang){
      localStorage.setItem("lang",lang)
      this.lang=localStorage.getItem("lang")
     },
@@ -206,11 +136,7 @@
      return this.lang;
     }
    },
-   created(){
-    this.themes[this.selectedTheme].selected=true
-    this.changeTheme(this.selectedTheme)
-    fetch('counter.php')
-   },
+
   })
  </script>
  <script type="text/javascript">
@@ -292,8 +218,7 @@
   var nday = shamsi[2];
   document.getElementById("date").innerHTML=(year+"/"+months[month-1]+"/"+nday);
   document.getElementById("clock").innerHTML=(Hour+":"+Minute);
-  if(app.retLang()=="eng" || app.retLang()=="esp"){//for English
-   mDay=a.getDate();
+  mDay=a.getDate();
    mMonth=a.getMonth()+1;
    mYear=a.getFullYear();
    if(mDay<10){

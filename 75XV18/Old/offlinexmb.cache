@@ -85,7 +85,6 @@ WebRTE.js
 common\blob.js
 common\netcat.js
 jb\jb.js
-jb\ps4-hen-vtx-755.js
 mira\mira.js
 mira\mira2.js
 webkit\int64.js

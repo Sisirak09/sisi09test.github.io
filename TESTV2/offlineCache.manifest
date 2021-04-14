@@ -1,6 +1,6 @@
-CACHE MANIFEST 
-# v2.5.5 Self-Host 
-
+CACHE MANIFEST
+# v1.0 : 16-03-2021
+ 
 1.jpg
 index.html
 common\exploit.js
@@ -17,6 +17,9 @@ payloads\exitidu.js
 payloads\fancontrol.js
 payloads\ftp.js
 payloads\goldhen.js
+payloads\goldhen750.js
+payloads\goldhen751.js
+payloads\goldhen755.js
 payloads\historyblocker.js
 payloads\kernelclock.js
 payloads\kerneldumper.js
@@ -36,6 +39,3 @@ payloads\webrte.js
 webkit\int64.js
 webkit\ps4.js
 webkit\utils.js
-
-NETWORK:
-*

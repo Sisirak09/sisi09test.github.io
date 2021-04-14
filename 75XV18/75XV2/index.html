@@ -1,25 +1,34 @@
-<html manifest="offlinexmb.cache">
+<html manifest="offlineCache.manifest">
 	<style>
     input{width:25px;height:25px;background-color: transparent;}
 	.button {
-		  background-color: #4863A0;  
-		  border-radius: 5px;
-		  color: white;
-		  padding: .5em;
-		  text-decoration: none;
-		  height:100%;
-		  display:inline-table;
-		  font-family: system-ui;
+		background-color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 170px;
+            height: 40px;            
+            text-align: center;
 		}
 
 		.button:focus,
 		.button:hover {
-		  background-color: #4863A0;
-		  color: White;
+			box-shadow: 0 5px 50px 0 white;
+            color: white;
+            border-radius: 10px;
 		}
+		.title {
+        font-size:40px;
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-weight:bolder;
+        margin-bottom:10px;
+              }
+       .yellow {
+        color:yellow;}
 
 		.titlehead {
-		  background-color: black;  
+		 background-color: black;  
 		  border-radius: 5px;
 		  color: yellow;
 		  padding: .5em;
@@ -32,6 +41,7 @@
 
 		.titlehead:focus,
 		.titlehead:hover {
+		  box-shadow: 0 5px 50px 0 white;
 		  background-color: rgb(1, 1, 22);
 		  color: yellow;
 		}
@@ -49,7 +59,7 @@
 		#myProgress {
 		  border: 5px solid #FFFFFF;
 		  border-radius: 5px;
-		  background-color: #ddd;
+		  background-color: blue;
 		  height: 45px;
 		  position: absolute;
 		  top:0;
@@ -58,6 +68,9 @@
 		  right: 150;
 		  margin: auto;
 		}
+       #Progress {
+		  color: yellow;
+		}
 
 		#myBar {
 		  width: 0%;
@@ -65,10 +78,11 @@
 		  background-color: #4CAF50;
 		  text-align: center;
 		  line-height: 30px;
-		  color: yellow;
+		  color: white;
 		  font-size: 35px;
 		  padding-top: 5px;
 		}
+		.pointer {cursor: pointer;}
 		
 		.switch {
 		  position: relative;
@@ -142,9 +156,26 @@
 		  border-radius: 50%;
 		}
 
+		.fail{
+        float:right;
+        margin-right:2.25%;
+        margin-top: 11px;
+        font-weight:bold;
+        font-size:28px;
+        color: white;
+         }
+       .pass {
+       float:left;
+       margin-left:1.25%;
+       font-weight:bold;
+       margin-top: 11px;
+       font-size:28px;
+       color: white;
+       }
+
 	</style>
 	<head>
-		<title>Night King 75X AUTO By DarkModderVC</title>
+		<title>Night King 75X AUTO DarkModderVC Style</title>
 	</head>
 	<body onload="go()" class="bg">
 		<script>
@@ -189,7 +220,11 @@
 		}
 		
 		function done(){
-			document.getElementById("myProgress").remove();
+            document.getElementById("myProgress").remove();
+			if (localStorage.passcount == null) localStorage.passcount=0;
+            window.passCounter.innerHTML=localStorage.passcount;
+            if (localStorage.failcount == null) localStorage.failcount=0;
+            window.failCounter.innerHTML=localStorage.failcount;
 			if(document.getElementById("progress").innerHTML.includes("Failed")){
 				document.getElementById('load').innerHTML='<tr style="color:white;">'+
 					'<td id="aexp" colspan="2" align="right" style="width: 12%;font-family: system-ui;font-size: 20px;">Autoload Exploit &nbsp;</td>'+
@@ -214,15 +249,15 @@
 					'<td id="nexp" align="left" style="width: 45%;font-family: system-ui;font-size: 20px;">&nbsp; Preload New Exploit</td>'+
 					'</tr>'+
 					'<tr id="mexp">'+
-					'<td align="center" colspan="3"><a href="#" id="exploit_old" class="button" onclick="toggle_payload(\'exploit_old\'); return false" style="width:44.5%">Old Exploit</a>&nbsp;'+
-					'<a href="#" id="exploit" class="button" onclick="toggle_payload(\'exploit\'); return false" style="width:44.5%">New Exploit</a>&nbsp;</td>'+
+					'<td align="center" colspan="3"><a href="#" id="exploit_old" class="button" onclick="toggle_payload(\'exploit_old\'); return false" style="color:#4863A0;width:44.5%">Old Exploit</a>&nbsp;'+
+					'<a href="#" id="exploit" class="button" onclick="toggle_payload(\'exploit\'); return false" style="color:#4863A0;width:44.5%">New Exploit</a>&nbsp;</td>'+
 					'</tr>'+
 					'<tr><td><br/></td></tr>'+
 					'<tr>'+
 					'<td align="center" colspan="3" >'+
-					'<a href="#" id="mira75X" class="button" onclick="toggle_payload(\'mira75X\'); return false" style="width:29%">MIRA 7.5X</a>&nbsp;'+
-					'<a href="#" id="mira2b" class="button" onclick="toggle_payload(\'mira2b\'); return false" style="width:29%">MIRA + Spoof</a>&nbsp;'+
-					'<a href="#" id="goldhen" class="button" onclick="toggle_payload(\'goldhen\'); return false" style="width:29%">GoldHEN</a>&nbsp;'+
+					'<a href="#" id="mira75X" class="button" onclick="toggle_payload(\'mira75X\'); return false" style="color:#4863A0;width:29%">MIRA 7.5X</a>&nbsp;'+
+					'<a href="#" id="mira2b" class="button" onclick="toggle_payload(\'mira2b\'); return false" style="color:#4863A0;width:29%">MIRA + Spoof</a>&nbsp;'+
+					'<a href="#" id="goldhen" class="button" onclick="toggle_payload(\'goldhen\'); return false" style="color:#4863A0;width:29%">GoldHEN</a>&nbsp;'+
 					'</td>'+
 					'</tr>'+
 					'<tr><td><br/></td></tr>'+
@@ -230,36 +265,36 @@
 					'<td colspan="3" align="center"><hr><br></td>'+
 					'</tr>'+
 					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="app2usb" class="button" onclick="toggle_payload(\'app2usb\'); return false" style="width:29%">App2USB</a>&nbsp;'+
-					'<a href="#" id="binloader" class="button" onclick="toggle_payload(\'binloader\'); return false" style="width:29%">Bin Loader</a>&nbsp;'+
-					'<a href="#" id="ps4debug" class="button" onclick="toggle_payload(\'ps4debug\'); return false" style="width:29%">PS4Debug</a>&nbsp;</td>'+
+					'<td align="center" colspan="3"><a href="#" id="app2usb" class="button" onclick="toggle_payload(\'app2usb\'); return false" style="color:#4863A0;width:29%">App2USB</a>&nbsp;'+
+					'<a href="#" id="binloader" class="button" onclick="toggle_payload(\'binloader\'); return false" style="color:#4863A0;width:29%">Bin Loader</a>&nbsp;'+
+					'<a href="#" id="ps4debug" class="button" onclick="toggle_payload(\'ps4debug\'); return false" style="color:#4863A0;width:29%">PS4Debug</a>&nbsp;</td>'+
 					'</tr><tr><td><br/></td></tr>'+
 					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="disableupdates" class="button" onclick="toggle_payload(\'disableupdates\'); return false" style="width:29%">Disable Updates</a>&nbsp;'+
-					'<a href="#" id="enableupdates" class="button" onclick="toggle_payload(\'enableupdates\'); return false" style="width:29%">Enable Updates</a>&nbsp;'+
-					'<a href="#" id="ftp" class="button" onclick="toggle_payload(\'ftp\'); return false" style="width:29%">FTP</a>&nbsp;</td>'+
+					'<td align="center" colspan="3"><a href="#" id="disableupdates" class="button" onclick="toggle_payload(\'disableupdates\'); return false" style="color:#4863A0;width:29%">Disable Updates</a>&nbsp;'+
+					'<a href="#" id="enableupdates" class="button" onclick="toggle_payload(\'enableupdates\'); return false" style="color:#4863A0;width:29%">Enable Updates</a>&nbsp;'+
+					'<a href="#" id="ftp" class="button" onclick="toggle_payload(\'ftp\'); return false" style="width:color:#4863A0;29%">FTP</a>&nbsp;</td>'+
 					'</tr><tr><td><br/></td></tr>'+
 					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="dumper" class="button" onclick="toggle_payload(\'dumper\'); return false" style="width:29%">Dumper</a>&nbsp;'+
-					'<a href="#" id="exitidu" class="button" onclick="toggle_payload(\'exitidu\'); return false" style="width:29%">Exit IDU</a>&nbsp;'+
-					'<a href="#" id="enablebrowser" class="button" onclick="toggle_payload(\'enablebrowser\'); return false" style="width:29%">Enable Browser</a>&nbsp;</td>'+
+					'<td align="center" colspan="3"><a href="#" id="dumper" class="button" onclick="toggle_payload(\'dumper\'); return false" style="width:color:#4863A0;29%">Dumper</a>&nbsp;'+
+					'<a href="#" id="exitidu" class="button" onclick="toggle_payload(\'exitidu\'); return false" style="color:#4863A0;width:29%">Exit IDU</a>&nbsp;'+
+					'<a href="#" id="enablebrowser" class="button" onclick="toggle_payload(\'enablebrowser\'); return false" style="color:#4863A0;width:29%">Enable Browser</a>&nbsp;</td>'+
 					'</tr><tr><td><br/></td></tr>'+
 					'<tr>'+
 					'<tr>'+
 					'<td align="center" colspan="3">'+
-					'<a href="#" id="backup" class="button" onclick="toggle_payload(\'backup\'); return false" style="width:29%">Backup</a>&nbsp;'+
-					'<a href="#" id="restore" class="button" onclick="toggle_payload(\'restore\'); return false" style="width:29%">Restore</a>&nbsp;'+
-					'<a href="#" id="historyblocker" class="button" onclick="toggle_payload(\'historyblocker\'); return false" style="width:29%">History Blocker</a>&nbsp;</td>'+
+					'<a href="#" id="backup" class="button" onclick="toggle_payload(\'backup\'); return false" style="color:#4863A0;width:29%">Backup</a>&nbsp;'+
+					'<a href="#" id="restore" class="button" onclick="toggle_payload(\'restore\'); return false" style="color:#4863A0;width:29%">Restore</a>&nbsp;'+
+					'<a href="#" id="historyblocker" class="button" onclick="toggle_payload(\'historyblocker\'); return false" style="color:#4863A0;width:29%">History Blocker</a>&nbsp;</td>'+
 					'</tr><tr><td><br/></td></tr>'+
 					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="renamer" class="button" onclick="toggle_payload(\'rifrenamer\'); return false" style="width:29%">Rif Renamer</a>&nbsp;'+
-					'<a href="#" id="todex" class="button" onclick="toggle_payload(\'todex\'); return false" style="width:29%">To-Dex</a>&nbsp;'+
-					'<a href="#" id="disableaslr" class="button" onclick="toggle_payload(\'disableaslr\'); return false" style="width:29%">Disable ASLR</a>&nbsp;</td>'+
+					'<td align="center" colspan="3"><a href="#" id="renamer" class="button" onclick="toggle_payload(\'rifrenamer\'); return false" style="color:#4863A0;width:29%">Rif Renamer</a>&nbsp;'+
+					'<a href="#" id="todex" class="button" onclick="toggle_payload(\'todex\'); return false" style="color:#4863A0;width:29%">To-Dex</a>&nbsp;'+
+					'<a href="#" id="disableaslr" class="button" onclick="toggle_payload(\'disableaslr\'); return false" style="color:#4863A0;width:29%">Disable ASLR</a>&nbsp;</td>'+
 					'</tr><tr><td><br/></td></tr>'+
 					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="kerneldumper" class="button" onclick="toggle_payload(\'kerneldumper\'); return false" style="width:29%">Kernel Dumper</a>&nbsp;'+
-					'<a href="#" id="webrte" class="button" onclick="toggle_payload(\'webrte\'); return false" style="width:29%">WebRTE</a>&nbsp;'+
-					'<a href="#" id="fancontrol" class="button" onclick="toggle_payload(\'fancontrol\'); return false" style="width:29%">Fan Control</a>&nbsp;</td>'+
+					'<td align="center" colspan="3"><a href="#" id="kerneldumper" class="button" onclick="toggle_payload(\'kerneldumper\'); return false" style="color:#4863A0;width:29%">Kernel Dumper</a>&nbsp;'+
+					'<a href="#" id="webrte" class="button" onclick="toggle_payload(\'webrte\'); return false" style="color:#4863A0;width:29%">WebRTE</a>&nbsp;'+
+					'<a href="#" id="fancontrol" class="button" onclick="toggle_payload(\'fancontrol\'); return false" style="color:#4863A0;width:29%">Fan Control</a>&nbsp;</td>'+
 					'</tr>';
 				if(localStorage.autoExploit=="true"){document.getElementById('tog1').checked=true;document.getElementById('toggleExploit').style.display='table-row';document.getElementById('mexp').style.display='none';}else{document.getElementById('tog1').checked=false;document.getElementById('toggleExploit').style.display='none';document.getElementById('mexp').style.display='table-row';}
 			}
@@ -298,8 +333,8 @@
 		<script src="./webkit/utils.js"></script>
 		<script src="./webkit/int64.js"></script>
 		<script src="./webkit/ps4.js"></script>
-		<h1 id="progress" class="titlehead">Loading.. Please Wait !!</h1><hr><br>
-		<button style="opacity:0" id="input1" onfocus="handle2()"></button>
+		<a class="pass" style="color: green;text-shadow: 4px 4px 4px black;font-size:30px; font-weight: bold;">Pass = <span id=passCounter></span></a><a  class="fail" style="color: red;text-shadow: 4px 4px 4px black;font-size:30px; font-weight: bold;">Fail = <span id=failCounter></span> </a><h1 id="progress" class="titlehead">Loading.. Please Wait !!</h1><br>
+        <button style="opacity:0" id="input1" onfocus="handle2()"></button>
 		<button style="opacity:0" id="input2"></button>
 		<button style="opacity:0" id="input3" onfocus="handle2()"></button>
 		<select style="opacity:0" id="select1">
