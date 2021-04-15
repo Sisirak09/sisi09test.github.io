@@ -2,6 +2,7 @@ CACHE MANIFEST
 # v2.5.5 Self-Host 
 
 1.jpg
+702.js
 about.html
 app2usb.html
 app2usb.js
@@ -22,6 +23,7 @@ eupdates.html
 eupdates.js
 fix.html
 fix.js
+frontend.js
 ftp.html
 ftp.js
 goldhen.html
@@ -53,6 +55,8 @@ linux3.js
 loader.js
 mira.html
 mira2b.js
+offlineweb.html
+payload.js
 PS4-GTA-V-NATIVE-CALLER-7.02-1.00.js
 PS4-GTA-V-NATIVE-CALLER-7.02-1.27.js
 PS4-GTA-V-NATIVE-CALLER-7.02-1.32.js
@@ -72,6 +76,10 @@ utils.js
 utilsm.js
 webrte.html
 webrte.js
+jb702\c-code.js
+mira702\c-code.js
+mira702\mira.js
+mira702\mira2.js
 restore\1.jpg
 restore\702.js
 restore\c-code.js
@@ -83,6 +91,9 @@ restore\mira2.js
 restore\ps4.js
 restore\restore.js
 restore\utils.js
+webkit702\int64.js
+webkit702\ps4.js
+webkit702\utils.js
 
 NETWORK:
 *
