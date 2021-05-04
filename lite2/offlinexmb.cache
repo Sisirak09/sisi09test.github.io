@@ -41,12 +41,20 @@ pl_updatesEnable.bin
 rifrenamer.bin
 Style.css
 WebRTE.bin
-restore\c-code.js
-restore\exploit.js
-restore\index.html
-restore\jailbreak.js
-restore\loader.js
-restore\payload.js
+activator\activator.html
+activator\bg.jpg
+activator\frontend.js
+activator\payload.js
+activator\common\exploit.js
+activator\common\helpers.js
+activator\common\malloc.js
+activator\common\rop.js
+activator\common\syscalls.js
+activator\common\syscalls2.js
+activator\jb\c-code.js
+activator\mira\c-code.js
+activator\mira\mira.js
+activator\mira\mira2.js
 
 NETWORK:
 *
