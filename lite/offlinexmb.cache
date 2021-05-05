@@ -40,9 +40,9 @@ pl_updatesEnable.bin
 rifrenamer.bin
 Style.css
 WebRTE.bin
+activator\activator.html
 activator\bg.jpg
 activator\frontend.js
-activator\index.html
 activator\payload.js
 activator\common\exploit.js
 activator\common\helpers.js
