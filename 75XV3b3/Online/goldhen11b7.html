@@ -1,6 +1,6 @@
 <html>
 <head>
-<title> GoldHEN 1.0</title>
+<title> GoldHEN 1.1 B7</title>
 </head>
 <body style="background-color:black;color:white;" onload="go()">
 <script>
@@ -41,12 +41,12 @@ window.midExploit = function()
 
     var scripts = ['blob.js', 'jb.js'];
 
-    if (fwFromUA != "755") {
-        die('GoldHen 1.0 is not compatible with your firmware version!');
+    if (fwFromUA != "750" && fwFromUA != "751" && fwFromUA != "755") {
+        die('GoldHEN V1.1 Beta 7 is not supported by your firmware version!');
     }
     
     scripts.push('common/loader-755.js');
-    scripts.push('common/goldhen10_755.js');
+    scripts.push('common/goldhen11b7_' + fwFromUA + '.js');
     scripts.push('netcat.js');
 
     preloadScripts(scripts, go);

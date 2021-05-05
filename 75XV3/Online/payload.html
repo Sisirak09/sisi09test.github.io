@@ -57,7 +57,7 @@ window.midExploit = function()
 
 window.postExploit = function()
 {
-    history.pushState({}, '', '.');
+    history.pushState({}, '', 'index.html');
     setTimeout(function() //update the screen one last time...
     {
         eval.call(window, scriptCode);

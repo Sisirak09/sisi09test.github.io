@@ -41,12 +41,12 @@ window.midExploit = function()
 
     var scripts = ['blob.js', 'jb.js'];
 
-    if (fwFromUA != "750" && fwFromUA != "751" && fwFromUA != "755") {
-        die('Unsupported Firmware!');
+    if (fwFromUA != "755") {
+        die('GoldHen 1.0 is not compatible with your firmware version!');
     }
     
     scripts.push('common/loader-755.js');
-    scripts.push('common/goldhen10_' + fwFromUA + '.js');
+    scripts.push('common/goldhen10_755.js');
     scripts.push('netcat.js');
 
     preloadScripts(scripts, go);
@@ -56,6 +56,7 @@ window.midExploit = function()
 window.postExploit = function()
 {
     document.cookie = 'kex=0';
+    history.pushState({}, '', 'index.html');
     setTimeout(function() //update the screen one last time...
     {
         eval.call(window, scriptCode);

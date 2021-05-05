@@ -1,5 +1,5 @@
 CACHE MANIFEST 
-# vghgjkhhigfdddss6755544tgzxrx  
+# v2.5.5 Self-Host 
 
 1.jpg
 1gb.js
@@ -8,6 +8,7 @@ about.html
 app2usb.js
 backup.js
 blob.js
+Cache.manifest
 disable-aslr.js
 disable-updates.js
 dumper.js
@@ -56,6 +57,3 @@ common\mira755.js
 webkit\int64.js
 webkit\ps4.js
 webkit\utils.js
-
-NETWORK:
-*
