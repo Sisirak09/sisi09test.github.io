@@ -111,7 +111,7 @@ function setupRW() {
 	debug_log("Exploited Successfully !!");
 	localStorage.passcount = ++localStorage.passcount;window.passCounter.innerHTML=localStorage.passcount;
 	
-	setTimeout(function(){document.getElementById("progress").innerHTML="PS4 Jailbreak 7.02 - Select the Payloads in its Order of Execution and Click Run..";}, 3500);
+	setTimeout(function(){document.getElementById("progress").innerHTML="Select the Payloads in its Order of Execution and Click Run..";}, 3500);
 
 	/* Restore the overidden vtable pointer */
 	write64(guess_htmltextarea_addr, saved_vtable);
@@ -142,6 +142,9 @@ function setupRW() {
 					'<a href="#" id="hen" class="button" onclick="toggle_payload(\'hen\'); return false" style="background-color:white;color:#4863A0;width:29%">HEN 2.1.3</a>&nbsp;'+
 					'<a href="#" id="henb" class="button" onclick="toggle_payload(\'henb\'); return false" style="background-color:white;color:#4863A0;width:29%">HEN 2.1.3b</a>&nbsp;'+
 					'<a href="#" id="spoof" class="button" onclick="toggle_payload(\'spoof\'); return false" style="background-color:white;color:#4863A0;width:29%">FW Spoof</a>&nbsp;'+
+					'<tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<td align="center" colspan="3" >'+
 					'<a href="#" id="goldhen10" class="button" onclick="toggle_payload(\'goldhen10\'); return false" style="background-color:goldenrod;color:white;width:29%">GoldHEN V1.0</a>&nbsp;'+
 					'<a href="#" id="goldhen11" class="button" onclick="toggle_payload(\'goldhen11\'); return false" style="background-color:goldenrod;color:white;width:29%">GoldHEN V1.1</a>&nbsp;'+
 					'</td>'+
