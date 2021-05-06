@@ -137,9 +137,8 @@ function setupRW() {
 			        '<a href="#" class="button" onclick="load_payload();" style="background-color:white;color:#4863A0;width:100%">Run Selected Payload(s)</a>&nbsp;'+
 			        '</td>'+
 			        '</tr>'+
-			        '<tr><td><br/></td></tr>'+
 			        '<tr>'+
-					'<td align="center" colspan="5" >'+
+					'<td align="center" colspan="3" >'+
 					'<a href="#" id="hen" class="button" onclick="toggle_payload(\'hen\'); return false" style="background-color:white;color:#4863A0;width:29%">HEN 2.1.3</a>&nbsp;'+
 					'<a href="#" id="henb" class="button" onclick="toggle_payload(\'henb\'); return false" style="background-color:white;color:#4863A0;width:29%">HEN 2.1.3b</a>&nbsp;'+
 					'<a href="#" id="spoof" class="button" onclick="toggle_payload(\'spoof\'); return false" style="background-color:white;color:#4863A0;width:29%">FW Spoof</a>&nbsp;'+
@@ -147,7 +146,6 @@ function setupRW() {
 					'<a href="#" id="goldhen11" class="button" onclick="toggle_payload(\'goldhen11\'); return false" style="background-color:goldenrod;color:white;width:29%">GoldHEN V1.1</a>&nbsp;'+
 					'</td>'+
 					'</tr>'+
-					'<tr><td><br/></td></tr>'+
 					'<tr>'+
 					'<td colspan="3" align="center"><hr><br></td>'+
 					'</tr>'+

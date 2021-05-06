@@ -122,6 +122,12 @@ function write_payload(payload_writer, pld)
 	else if(pld == "moduledumper"){
 		b64s=moduledumper;
 		}
+	else if(pld == "rifrenamer"){
+		b64s=rifrenamer;
+		}
+	else if(pld == "kerneldumper"){
+		b64s=kerneldumper;
+		}
 	var ua = Base64Binary.decode(b64s);
 
 	var i;
