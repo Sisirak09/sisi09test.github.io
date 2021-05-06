@@ -134,13 +134,13 @@ function setupRW() {
 	document.getElementById("myProgress").remove();
             document.getElementById('load').innerHTML='<tr>'+
 			        '<td align="center" colspan="2" >'+
-			        '<a href="#" class="button" onclick="load_payload();" style="width:100%">Run Selected Payload(s)</a>&nbsp;'+
+			        '<a href="#" class="button" onclick="load_payload();" style="background-color:white;color:#4863A0;width:100%">Run Selected Payload(s)</a>&nbsp;'+
 			        '</td>'+
 			        '</tr>'+
 			        '<tr><td><br/></td></tr>'+
 			        '<tr>'+
 					'<tr>'+
-					'<td align="center" colspan="3" >'+
+					'<td align="center" colspan="5" >'+
 					'<a href="#" id="hen" class="button" onclick="toggle_payload(\'hen\'); return false" style="background-color:white;color:#4863A0;width:29%">HEN 2.1.3</a>&nbsp;'+
 					'<a href="#" id="henb" class="button" onclick="toggle_payload(\'henb\'); return false" style="background-color:white;color:#4863A0;width:29%">HEN 2.1.3b</a>&nbsp;'+
 					'<a href="#" id="spoof" class="button" onclick="toggle_payload(\'spoof\'); return false" style="background-color:white;color:#4863A0;width:29%">FW Spoof</a>&nbsp;'+
@@ -188,7 +188,7 @@ function setupRW() {
 }
 
 function toggle_payload(pld){
-	if(pld=="henb" || pld=="binloader" || pld=="goldhen10" || pld=="goldhen11"){if(confirm("HEN/GOLDHEN (or) Binloader cannot be loaded with any other payloads\nDo you still want to load this payload alone ?")){document.getElementById("pldooe").value = pld; load_payload();}}
+	if(pld=="hen" || pld=="binloader"){if(confirm("HEN (or) Binloader cannot be loaded with any other payloads\nDo you still want to load this payload alone ?")){document.getElementById("pldooe").value = pld; load_payload();}}
 	else{
 		var pldooe = document.getElementById("pldooe").value;
 		var pldooe_full = document.getElementById("pldooe_full").value;
