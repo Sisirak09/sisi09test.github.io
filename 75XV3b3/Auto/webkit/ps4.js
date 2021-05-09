@@ -199,14 +199,21 @@ function toggle_payload(pld){
 		document.getElementById("progress").innerHTML="Loading Payload.. Please wait..";
 		preloadScripts(['payloads/preloader.js', 'payloads/ps4debug.js', 'payloads/loader.js']);
 	}else if(pld == "goldhen"){
-		document.getElementById("progress").innerHTML="Loading Payload.. Please wait..";
+		document.getElementById("progress").innerHTML="Loading GoldHen V1.1 .. Please wait..";
 		if(fw=="755"){
 			preloadScripts(['payloads/preloader.js', 'payloads/goldhen'+fw+'.js', 'payloads/loader.js']);
 		}else{
 			preloadScripts(['payloads/preloader'+fw+'.js', 'payloads/goldhen'+fw+'.js', 'payloads/loader.js']);	
 		}
+	}else if(pld == "goldhen11b7"){
+		document.getElementById("progress").innerHTML="Loading GoldHen V1.1 B7.. Please wait..";
+		if(fw=="755"){
+			preloadScripts(['payloads/preloader.js', 'payloads/goldhen11b7_'+fw+'.js', 'payloads/loader.js']);
+		}else{
+			preloadScripts(['payloads/preloader'+fw+'.js', 'payloads/goldhen11b7_'+fw+'.js', 'payloads/loader.js']);	
+		}
 	}else if(pld == "goldhenold"){
-		document.getElementById("progress").innerHTML="Loading Payload.. Please wait..";
+		document.getElementById("progress").innerHTML="Loading GoldHen V1.0.. Please wait..";
 		preloadScripts(['payloads/preloader.js', 'payloads/goldhen.js', 'payloads/loader.js']);
 	}else if(pld == "webrte"){
 		document.getElementById("progress").innerHTML="Loading Payload.. Please wait..";
